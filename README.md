@@ -2,5 +2,5 @@
 
 - retrofit通过multipart同时上传javabean和多图片，使用springMVC存储并生成图片链接。
 
-- 用md5实现的简单图片防篡改
+- [用md5实现的简单图片防篡改](https://github.com/jcalaz/tip/blob/master/src/main/java/me/jcala/tip/img/PreventImgTamper.java)
 
