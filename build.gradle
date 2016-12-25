@@ -9,7 +9,7 @@ task wrapper(type: Wrapper) {
 apply plugin: 'java'
 apply plugin: 'war'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -17,4 +17,5 @@ repositories {
 
 dependencies {
     compile group: 'junit', name: 'junit', version: '4.11'
+    
 }

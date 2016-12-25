@@ -37,11 +37,19 @@
    3. [Hibernate: 老牌强大ORM，用的不多，开发效率相比spring data jpa感觉差不少](http://hibernate.org/orm/)
    4. [JOOQ: DSL写法，有点类似动态语言了，感觉中小项目用起来会很爽](http://www.jooq.org/)
    5. [spring data mongo: 类似spring data jpa，开发效率高，复杂操作使用MongoTemplate](http://projects.spring.io/spring-data-mongodb/)
-      
+   
+- ####日志
+   1. [commons-logging: 日志接口，会自动装载具体的日志系统，采用ClassLoader寻找和载入底层的日志库，没有第三方会使用JDK自带](http://commons.apache.org/proper/commons-logging/)
+   2. [slf4j: 日志接口，通过各种桥接包判断实现，在编译时静态绑定真正的日志库](http://www.slf4j.org/)
+   3. [log4l: 日志实现，较早](http://logging.apache.org/log4j/1.2/)
+   4. [logback: 日志实现，相比log4j，性能更好，功能更强大](http://logback.qos.ch/)
+   5. [log4j2: 日志实现，配置更强大，支持插件化，使用Disruptor实现异步日志，性能最好](http://logging.apache.org/log4j/2.x/)
+   
+   
   
 ### JVM和字节码
 
-- ####字节码工具
+- #### 字节码工具
   1. [ASM:  是一个 Java 字节码操控框架。它能够以二进制形式修改已有类或者动态生成类,性能高，但不如javassist简单](http://asm.ow2.org/)
   2. [Javassist: 是一个开源的分析、编辑和创建Java字节码的类库,无须了解JVM指令，java编码即可](http://jboss-javassist.github.io/javassist/)
   3. [jd-gui: java反编译](http://jd.benow.ca/)
