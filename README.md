@@ -1,6 +1,7 @@
-#做过项目中的小实现
+#[做过项目中的小实现](做过项目中的小实现)
 
-[github地址](https://github.com/jcalaz/tip)
+> 有些项目需要重构，可能造成链接失效,见谅
+
 
 ## Android
 - [fresco自定义ImagePipeline，使用OkHttp加载图片,并加入SSL访问证书](https://github.com/jcalaz/xmarket/blob/master/app/src/main/java/me/jcala/xmarket/app/App.java)
@@ -150,9 +151,43 @@ keytool -export -alias xmarketkey -keystore g:\home\xmarket.keystore -file g:\ho
 keytool -printcert -file g:\home\xmarket.crt //查看证书
 ```
 
+- [spring boot整合mybatis](https://github.com/jcalaz/jcalaBlog/blob/master/src/main/resources/application-dev.yml)
 
-## 加密
+> 第60行有其配置，通过org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1整合
+
+- [全注解使用mybatis](https://github.com/jcalaz/jcalaBlog/blob/master/src/main/java/me/jcala/blog/mapping/BlogMapper.java)
+
+> 注解对复杂操作也越来越好，如插入之后返回id值(89行)
+
+- [velocity的宏使用](https://github.com/jcalaz/jcalaBlog/blob/master/src/main/resources/templates/VM_global_library.vm)
+
+> 需要在application.yml中配置宏文件位置，如velocimacro.library: VM_global_library.vm。
+
+- [spring boot运行时自动创建数据库和表，并设置初始数据](https://github.com/jcalaz/jcalaBlog/blob/master/src/main/resources/application-dev.yml)
+
+> 将spring.datasource.initialize设置为true; spring.datasource.schema指向创建数据库和表的sql文件，如classpath:import.sql；spring.datasource.data指向初始数据sql文件
+
+- [spring boot开启HTTP文件压缩](https://github.com/jcalaz/jcalaBlog/blob/master/src/main/resources/application-dev.yml)
+
+```yaml
+server:
+    compression:
+            min-response-size: 512 #压缩文件最小大小(kb)
+            enabled: true #是否压缩
+            mime-types: text/html,text/css,text/javascript,application/javascript,image/gif,image/png,image/jpg #要压缩的文件格式
+```
+
 - [用md5实现的简单图片防篡改](https://github.com/jcalaz/tip/blob/master/src/main/java/me/jcala/tip/img/PreventImgTamper.java)
 
 > 加密过程: 获取图片md5值--md5的16个字节加到图片最末尾。验证过程: 取出图片末尾16个字节--并删除图片末尾16个字节--重新获取图片的md5值--两个md5进行比对。这里只是简单实现，代码没有进行优化
+
+## 前端
+
+- [vuex的使用](https://github.com/jcalaz/jchat/tree/master/ui/src/vuex)
+
+> 包括getters，mutations，actions等，components下的组件中有其具体调用方式。
+
+- [使用vue-cli，js代码中图片访问链接设置](https://github.com/jcalaz/jchat/tree/master/ui/static)
+
+> 将图片放到static文件夹下，npm run dev时node的server会将static目录加入到服务器中，url如/static/img/wood.jpg即可访问
 
