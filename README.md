@@ -1,4 +1,4 @@
-###自己平常实现的代码库
+###项目中的小实现
 
 ### Android
 - [fresco自定义ImagePipeline，使用OkHttp加载图片,并加入SSL访问证书](https://github.com/jcalaz/xmarket/blob/master/app/src/main/java/me/jcala/xmarket/app/App.java)
@@ -54,6 +54,10 @@ public class SplashActivity extends BaseActivity {
 }
 ```
 
+- [GridView或者ListView的万能适配器](https://github.com/jcalaz/xmarket/blob/master/app/src/main/java/me/jcala/xmarket/view/CommonAdapter.java)
+
+> 通过CommonAdapter和me/jcala/xmarket/view/ViewHolder，在me/jcala/xmarket/mvp/sort/TradeTagPresenterImpl.java的47行有对他的使用
+
 - [fresco实现圆形头像](https://github.com/jcalaz/xmarket/blob/master/app/src/main/res/layout/main_slide.xml)
 
 ```xml
@@ -98,14 +102,51 @@ public interface TradeReq {
 }
 ```
 
-### Spring boot
+### java web
 - [spring data mongo使用MongoTemplate实现复杂数据操作](https://github.com/jcalaz/xmarket-server/blob/master/src/main/java/me/jcala/xmarket/server/repository/CustomRepositoryImpl.java)
+
+> 在MongoRepository满足不了要求可通过MongoTemplate实现，spring中已经有MongoTemplate的实例，直接注入使用即可 
+
 - [Multipart接收多多图片存储，并生成图片获取链接](https://github.com/jcalaz/xmarket-server/blob/master/src/main/java/me/jcala/xmarket/server/utils/FileTool.java)
+
+> 安卓客户端部分如上：retrofit实现多图片和javabean同时上传
+
 - [使用SpringMVC拦截器验证Token是否过期和合法](https://github.com/jcalaz/xmarket-server/blob/master/src/main/java/me/jcala/xmarket/server/interceptor/TokenInterceptor.java)
+
+> 获取x-access-token的值，验证成功返回自定义的HTTP状态码210，否则返回401
+
 - [swagger配置，自动根据springmvc的控制器注解生成API文档](https://github.com/jcalaz/xmarket-server/blob/master/src/main/java/me/jcala/xmarket/server/conf/RestConfig.java)
+
+> 返回值为Docket的方法即是配置swagger的配置类，在me/jcala/xmarket/server/ctrl包下的控制器类有swagger的注解
+
 - [MongoRepository设置从mongo读取列](https://github.com/jcalaz/xmarket-server/blob/master/src/main/java/me/jcala/xmarket/server/repository/TradeRepository.java)
-- [jwt token的创建](https://github.com/jcalaz/xmarket-server/blob/master/src/main/java/me/jcala/xmarket/server/repository/TradeRepository.java)
+
+> 默认读取一个记录的所有属性，只读取特定的属性，可通过@Query(fields = "{ 'id': 1,'title':1}")设置
+
+- [jwt token的创建](https://github.com/jcalaz/xmarket-server/blob/master/src/main/java/me/jcala/xmarket/server/service/UserServiceImpl.java)
+
+> 第99行，在application.yml中设置了JWT的密匙和生命周期 
+
 - [spring boot配置https](https://github.com/jcalaz/xmarket-server/blob/master/src/main/resources/application-dev.yml)
+
+> xmarket.keystore数字证书通过keytool生成
+```yaml
+ssl:
+        key-store: classpath:xmarket.keystore
+        key-store-password: 546sdhjdf
+        key-password: sdjkasl465sd
+        keyAlias: xmarketkey
+        enabled: true
+```
+
+- [keytool生成HTTPS证书]()
+
+```
+keytool -genkey -alias xmarketkey -keyalg RSA -keysize 1024 -keypass sdjkasl465sd -validity 365 -keystore g:\home\xmarket.keystore -storepass 546sdhjdf  //生成证书
+keytool -list  -v -keystore g:\home\xmarket.keystore -storepass 546sdhjdf //查看证书
+keytool -export -alias xmarketkey -keystore g:\home\xmarket.keystore -file g:\home\xmarket.crt -storepass 546sdhjdf //导出证书
+keytool -printcert -file g:\home\xmarket.crt //查看证书
+```
 
 
 ### 加密
