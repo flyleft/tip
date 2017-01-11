@@ -142,7 +142,7 @@ ssl:
         enabled: true
 ```
 
-- [keytool生成HTTPS证书]()
+- [keytool生成HTTPS证书](https://github.com/jcalaz/xmarket-server)
 
 ```
 keytool -genkey -alias xmarketkey -keyalg RSA -keysize 1024 -keypass sdjkasl465sd -validity 365 -keystore g:\home\xmarket.keystore -storepass 546sdhjdf  //生成证书
