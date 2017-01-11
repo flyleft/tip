@@ -1,6 +1,8 @@
-###项目中的小实现
+#做过项目中的小实现
 
-### Android
+[github地址](https://github.com/jcalaz/tip)
+
+## Android
 - [fresco自定义ImagePipeline，使用OkHttp加载图片,并加入SSL访问证书](https://github.com/jcalaz/xmarket/blob/master/app/src/main/java/me/jcala/xmarket/app/App.java)
 
 > 第30行，通过自定义的ImagePipelineConfig和OkHttpClient，在自定义的OkHttpClient中加入SSL证书。
@@ -102,7 +104,7 @@ public interface TradeReq {
 }
 ```
 
-### java web
+## java web
 - [spring data mongo使用MongoTemplate实现复杂数据操作](https://github.com/jcalaz/xmarket-server/blob/master/src/main/java/me/jcala/xmarket/server/repository/CustomRepositoryImpl.java)
 
 > 在MongoRepository满足不了要求可通过MongoTemplate实现，spring中已经有MongoTemplate的实例，直接注入使用即可 
@@ -149,5 +151,8 @@ keytool -printcert -file g:\home\xmarket.crt //查看证书
 ```
 
 
-### 加密
+## 加密
 - [用md5实现的简单图片防篡改](https://github.com/jcalaz/tip/blob/master/src/main/java/me/jcala/tip/img/PreventImgTamper.java)
+
+> 加密过程: 获取图片md5值--md5的16个字节加到图片最末尾。验证过程: 取出图片末尾16个字节--并删除图片末尾16个字节--重新获取图片的md5值--两个md5进行比对。这里只是简单实现，代码没有进行优化
+
