@@ -3,7 +3,7 @@
 ### Android
 - [fresco自定义ImagePipeline，使用OkHttp加载图片,并加入SSL访问证书](https://github.com/jcalaz/xmarket/blob/master/app/src/main/java/me/jcala/xmarket/app/App.java)
 
->第30行，通过自定义的ImagePipelineConfig和OkHttpClient，在自定义的OkHttpClient中加入SSL证书。
+> 第30行，通过自定义的ImagePipelineConfig和OkHttpClient，在自定义的OkHttpClient中加入SSL证书。
 - [retrofit通过okHttp拦截器实现token验证，过期自动获取新token](https://github.com/jcalaz/xmarket/blob/master/app/src/main/java/me/jcala/xmarket/network/TokenInterceptor.java)
 
 > 通过实现okhttp的Interceptor实现，在me/jcala/xmarket/network/ReqExecutor.java的61行进行注册。
