@@ -1,4 +1,6 @@
-##平常收藏的开源项目和技术
+##[平常收藏的开源项目和技术](https://github.com/jcalaz/tip)
+
+> 会不定时更新
 
 ### JAVAEE
 
@@ -41,11 +43,33 @@
 - ####日志
    1. [commons-logging: 日志接口，会自动装载具体的日志系统，采用ClassLoader寻找和载入底层的日志库，没有第三方会使用JDK自带](http://commons.apache.org/proper/commons-logging/)
    2. [slf4j: 日志接口，通过各种桥接包判断实现，在编译时静态绑定真正的日志库](http://www.slf4j.org/)
-   3. [log4l: 日志实现，较早](http://logging.apache.org/log4j/1.2/)
+   3. [log4j: 日志实现，较早](http://logging.apache.org/log4j/1.2/)
    4. [logback: 日志实现，相比log4j，性能更好，功能更强大](http://logback.qos.ch/)
    5. [log4j2: 日志实现，配置更强大，支持插件化，使用Disruptor实现异步日志，性能最好](http://logging.apache.org/log4j/2.x/)
    
+- ####全文搜索
+   1. [ElasticSearch: 基于Lucene RESTful web接口的搜索服务器。](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html)
+   2. [Solr: 高性能，基于Lucene的全文搜索服务器](http://lucene.apache.org/solr/)
+   3. [Lucene: 一个全文检索引擎的架构，提供了完整的查询引擎和索引引擎，部分文本分析引擎](https://lucene.apache.org/)
    
+- ####数据校验
+    1. [Hibernate Validator](http://hibernate.org/validator/)
+    2. [Bean Validation: 基于Hibernate Validator](http://beanvalidation.org/)
+    
+- ####restful
+    1. [spring mvc: 类加个@RestController或者方法加个@ResponseBody](https://spring.io/guides/gs/rest-service/)
+    2. [jersey: 实现了JAX-RS规范](https://jersey.java.net/)
+    3. [resteasy: JBoss项目，实现了JAX-RS规范，性能高 ](http://resteasy.jboss.org/)
+    
+- ####消息中间件
+    1. [ActiveMQ: 完全支持JMS1.1和J2EE 1.4规范的消息队列](http://activemq.apache.org/)
+    2. [RabbitMq:Erlang编写，在AMQP基础上完整的，可复用的企业消息系统](http://www.rabbitmq.com/)
+    3. [kafka: scala编写的高吞吐量的分布式发布订阅消息系统，常用于日志](http://kafka.apache.org/)
+    4. [RocketMQ: 阿里巴巴的MQ中间件,在其多个产品下使用，并能够撑住双十一的大流量](https://github.com/apache/incubator-rocketmq)
+
+- #### 其他
+    1. [spring-retry: 操作失败后，优雅自动重新尝试](https://github.com/spring-projects/spring-retry)
+     
   
 ### JVM和字节码
 
@@ -55,3 +79,9 @@
   3. [jd-gui: java反编译](http://jd.benow.ca/)
   4. [jbe : java字节码修改工具](http://www.cs.ioc.ee/~ando/jbe/)
   
+- ####JVM编程语言
+  1. [groovy: 类似ruby的动态语言，gradle的编写语言](http://www.groovy-lang.org/)
+  2. [scala: 强大的多范式编程语言，有spark，akka，kafka等开源项目](http://www.scala-lang.org/)
+  3. [clojure: 动态Lisp方言](https://www.clojure.org/)
+  4. [kotlin: jetbrains开发，目前多用于安卓开发，简化版的scala](http://kotlinlang.org/)
+  5. [lux: 正在开发中的静态lisp方言](https://github.com/LuxLang/lux)
