@@ -96,8 +96,17 @@
 - ####开源博客
     1. [jcalaBlog: 基于spring boot的个人博客，本来写给自己用，写完后开源了，有时间重构](https://github.com/jcalaz/jcalaBlog)
     2. [Solo: 是一款一个命令就能搭建好的 Java 开源博客系统，并内置了 15+ 套精心制作的皮肤](https://github.com/b3log/solo)
+  
+- ####序列化
+    1. [FlatBuffers: 相较于Protocol Buffers，其更适用于移动设备](https://github.com/google/flatbuffers)
+    2. [protobuf: 高性能，跨语言，也是google出品](https://github.com/google/protobuf)
+    3. [jprotobuf: 针对Java程序开发一套简易类库，目的是简化java语言对protobuf类库的使用](https://github.com/jhunters/jprotobuf)
+    3. [FST: 重新实现的Java快速对象序列化的开发包,序列化速度更快、体积更小，而且兼容JDK原生的序列化](https://github.com/RuedigerMoeller/fast-serialization)
+    4. [Kryo: 快速高效的Java序列化框架,支持论文件、数据库或网络数据，自动深拷贝、浅拷贝](https://github.com/EsotericSoftware/kryo)
+    5. [MessagePack: 基于二进制高效的对象序列化类库,跨语言,比JSON更快速也更轻巧](https://github.com/msgpack/msgpack)
+    6. [thrift: 跨语言，不仅仅包括序列化，是一个远程服务调用框架，facebook开源](http://thrift.apache.org/)
     
-- #### 其他
+- ####其他
     1. [spring-retry: 操作失败后，优雅自动重新尝试](https://github.com/spring-projects/spring-retry)
     2. [Flyway : 是一个敏捷工具，用于数据库的移植](https://flywaydb.org/)
     
@@ -128,5 +137,3 @@
 ### 学习
   1. [99-Problems: 对三种不同的语言Java 8,Scala和Haskell分别提出了99个问题，让你通过使用特定语言编程来提供一个最优的解决方案](https://github.com/shekhargulati/99-problems/tree/master/java8)
   2. [java-design-patterns: java设计模式学习](https://github.com/iluwatar/java-design-patterns)
-  
-  
