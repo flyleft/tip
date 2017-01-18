@@ -206,6 +206,7 @@ fn (student stu) studentToStr:String
 ```
 
 ##测试结果
+```
 id:pkg
 id:zuyi
 id:struct
@@ -270,3 +271,4 @@ id:.
 id:SPACE
 id:)
 id:#
+```
