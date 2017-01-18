@@ -7,7 +7,6 @@ import java.lang.annotation.*;
 @Inherited//表示一个注解类型会被自动继承
 @Documented//添加了Documented注解，那么它的注解会成为被注解元素的公共API的一部分。
 public @interface Desc {
-    String author();
-    String time();
-    String desc() default "描述：";
+    String value();
+    String desc() default "description：";
 }
