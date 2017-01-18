@@ -185,3 +185,38 @@
 #### 学习
   1. [99-Problems: 对三种不同的语言Java 8,Scala和Haskell分别提出了99个问题，让你通过使用特定语言编程来提供一个最优的解决方案](https://github.com/shekhargulati/99-problems/tree/master/java8)
   2. [java-design-patterns: java设计模式学习](https://github.com/iluwatar/java-design-patterns)
+
+---
+
+# 喜爱电影
+####电影
+- 我是谁？没有最安全的系统
+- 永无止境
+- 心理游戏
+- 前目的地
+- 非常嫌疑犯
+- V字仇杀队
+- 搏击俱乐部 
+- 一级恐惧
+- 黑暗骑士
+- 致命ID
+- 源代码
+- 低俗小说
+- 幸运数字斯莱文
+- 热血警探
+- 记忆碎片
+- 盗梦空间
+- Her
+- 第九区
+- 灵异第六感
+- 杀人回忆
+- 无耻混蛋
+- 老无所依
+- 恐怖游轮
+- 恐怖直播
+- 电锯惊魂
+
+#### 电视剧
+- 神探夏洛克
+- 黑客军团
+- 黑镜
