@@ -29,25 +29,25 @@
 2. @Target
    > 定义注解将应用于什么地方,当注解未指定Target值时，此注解可以使用任何元素之上,取值(ElementType)有:
 
-   - TYPE: 接口、类、枚举、注解
+   - ***TYPE***: 接口、类、枚举、注解
 
-   - FIELD: 字段、枚举的常量
+   - ***FIELD***: 字段、枚举的常量
 
-   - METHOD: 方法
+   - ***METHOD***: 方法
 
-   - PARAMETER: 方法参数
+   - ***PARAMETER***: 方法参数
 
-   - CONSTRUCTOR: 构造器
+   - ***CONSTRUCTOR***: 构造器
 
-   - LOCAL_VARIABLE: 局部变量
+   - ***LOCAL_VARIABLE***: 局部变量
 
-   - ANNOTATION_TYPE: 注解类型
+   - ***ANNOTATION_TYPE***: 注解类型
 
-   - PACKAGE: 包
+   - ***PACKAGE***: 包
 
-   - TYPE_PARAMETER: 类型参数声明(1.8新增)。 比如public class MyList<@MySet T> {}，在定义@MySet，必须在MySet的@Target设置 ElementType.TYPE_PARAMETER ，表示这个注解可以用来标注类型参数。
+   - ***TYPE_PARAMETER***: 类型参数声明(1.8新增)。 比如public class MyList<@MySet T> {}，在定义@MySet，必须在MySet的@Target设置 ElementType.TYPE_PARAMETER ，表示这个注解可以用来标注类型参数。
 
-   - TYPE_USE: 类型使用声明(1.8新增)。只要是类型名称，都可以进行注解，以下的使用注解都是可以的:
+   - ***TYPE_USE***: 类型使用声明(1.8新增)。只要是类型名称，都可以进行注解，以下的使用注解都是可以的:
    ```
     List<@Test Comparable> list1 = new ArrayList<>();
     List<? extends Comparable> list2 = new ArrayList<@Test Comparable>();
@@ -123,14 +123,13 @@ public @interface Desc {
            System.out.println("description:"+desc.desc());
         }
      }
+   }
  }
   ```
 
+#####[示例代码地址](https://github.com/jcalaz/tip/tree/master/src/main/java/me/jcala/tip/annotation)
 
 #####参考:
 - 慕课网
 - java编程思想
 - http://www.open-open.com/lib/view/open1453426805042.html
-
-
-
