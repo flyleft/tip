@@ -1,7 +1,12 @@
-# 博客
+# 自写博客
 - [java注解总结](https://github.com/jcalaz/tip/blob/master/blog/javase/java%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93.md)
 - [用JAVA二十分钟撸一个简易图片防篡改](https://github.com/jcalaz/tip/blob/master/blog/javase/%E7%94%A8JAVA%E4%BA%8C%E5%8D%81%E5%88%86%E9%92%9F%E6%92%B8%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E5%9B%BE%E7%89%87%E9%98%B2%E7%AF%A1%E6%94%B9.md)
 - [自制编程语言之用scala写一个简单分词器](https://github.com/jcalaz/tip/blob/master/blog/scala/%E8%87%AA%E5%88%B6%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%94%A8scala%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E5%88%86%E8%AF%8D%E5%99%A8.md)
+
+---
+
+# 博客收藏
+- [spring boot内存调优](http://spring.io/blog/2015/12/10/spring-boot-memory-performance)
 
 ---
 
@@ -185,7 +190,9 @@
 #### 学习
   1. [99-Problems: 对三种不同的语言Java 8,Scala和Haskell分别提出了99个问题，让你通过使用特定语言编程来提供一个最优的解决方案](https://github.com/shekhargulati/99-problems/tree/master/java8)
   2. [java-design-patterns: java设计模式学习](https://github.com/iluwatar/java-design-patterns)
-
+  3. [gradle中文指导](https://dongchuan.gitbooks.io/gradle-user-guide-/)
+  4. [spring boot中文指导](https://www.gitbook.com/book/qbgbook/spring-boot-reference-guide-zh/details)
+  
 ---
 
 # 喜爱电影
