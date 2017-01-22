@@ -5,8 +5,11 @@
 
 ---
 
-# 博客收藏
+# 博客和wiki收藏
 - [spring boot内存调优](http://spring.io/blog/2015/12/10/spring-boot-memory-performance)
+- [gradle中文指导](https://dongchuan.gitbooks.io/gradle-user-guide-/)
+- [spring boot中文指导](https://www.gitbook.com/book/qbgbook/spring-boot-reference-guide-zh/details)
+- [disruptor学习](http://wiki.jikexueyuan.com/project/disruptor-getting-started/)
 
 ---
 
@@ -190,8 +193,6 @@
 #### 学习
   1. [99-Problems: 对三种不同的语言Java 8,Scala和Haskell分别提出了99个问题，让你通过使用特定语言编程来提供一个最优的解决方案](https://github.com/shekhargulati/99-problems/tree/master/java8)
   2. [java-design-patterns: java设计模式学习](https://github.com/iluwatar/java-design-patterns)
-  3. [gradle中文指导](https://dongchuan.gitbooks.io/gradle-user-guide-/)
-  4. [spring boot中文指导](https://www.gitbook.com/book/qbgbook/spring-boot-reference-guide-zh/details)
   
 ---
 
