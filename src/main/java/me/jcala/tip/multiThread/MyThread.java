@@ -1,16 +1,16 @@
 package me.jcala.tip.multiThread;
 
 public class MyThread extends Thread {
-
-    public MyThread(String name) {
-        super();
-        this.setName(name);
-    }
-
     @Override
     public void run() {
         super.run();
-        System.out.println("This is a new Thread");
+        try {
+            System.out.println("run begin");
+            Thread.sleep(200000);
+            System.out.println("run end");
+        } catch (InterruptedException e) {
+            System.out.println("thread is interrupted , enter catch! "+this.isInterrupted());
+            e.printStackTrace();
+        }
     }
-
 }
