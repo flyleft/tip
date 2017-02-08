@@ -81,6 +81,16 @@ thread:main usernameB passwordAA  //发生了脏读
 thread:Thread-0 usernameB passwordBB
 ```
 
+##synchronized同步代码块
+
+- synchronized方法是对当前对象加锁，而synchronized同步代码块是对某一个对象进行加锁。
+
+- 在synchronized同步代码块中的就是同步执行，不在就是异步执行。
+
+- 静态同步synchronized方法和synchronized(class)代码块的锁都是*.java文件对应的Class类进行持锁。
+
+- 同步synchronized代码块不使用String作为锁对象，因为String的常量池的影响，而改用其他，比如new Object()实例化对象
+
 #####参考:
 - JAVA多线程编程核心技术
 - JAVA编程思想

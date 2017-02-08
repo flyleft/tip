@@ -1,4 +1,4 @@
-# 自写博客
+# 自写博客或笔记
 - [java注解总结](https://github.com/jcalaz/tip/blob/master/blog/javase/java%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93.md)
 - [用JAVA二十分钟撸一个简易图片防篡改](https://github.com/jcalaz/tip/blob/master/blog/javase/%E7%94%A8JAVA%E4%BA%8C%E5%8D%81%E5%88%86%E9%92%9F%E6%92%B8%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E5%9B%BE%E7%89%87%E9%98%B2%E7%AF%A1%E6%94%B9.md)
 - [自制编程语言之用scala写一个简单分词器](https://github.com/jcalaz/tip/blob/master/blog/scala/%E8%87%AA%E5%88%B6%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%94%A8scala%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E5%88%86%E8%AF%8D%E5%99%A8.md)
@@ -23,6 +23,7 @@
 - [JavaWeb项目为什么我们要放弃jsp？为什么要前后端解耦？为什么要动静分离？](http://blog.csdn.net/piantoutongyang/article/details/50878214?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [jps、jstack、jmap、jhat、jstat、hprof使用详解 ](http://josh-persistence.iteye.com/blog/2161848)
 - [Java压缩算法性能比较](http://codingo.xyz/index.php/2016/12/13/java_compress/)
+- [100个高质量Java开发者博客](http://www.importnew.com/7469.html)
 - [从源码角度认识ArrayList，LinkedList与HashMap](http://www.jianshu.com/p/f174d49b391c?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [HashMap 和 HashTable 源码学习和面试总结](http://www.cnblogs.com/kubixuesheng/p/6144535.html?utm_source=tuicool&utm_medium=referral)
 - [近5年133个Java面试问题列表](http://geek.csdn.net/news/detail/113566?utm_source=tuicool&utm_medium=referral)
