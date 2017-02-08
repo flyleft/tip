@@ -94,7 +94,51 @@ public class Main{
 }
 ```
 
-- ###原子类也不完全安全 
+- ###原子类也不完全安全
+```java
+import java.util.concurrent.atomic.AtomicLong;
+public class MyService{
+    public static AtomicLong aiRef=new AtomicLong();
+    public void addNum(){
+        System.out.println(Thread.currentThread().getName()+"加了100后的值是:"+aiRef.addAndGet(100));
+        aiRef.addAndGet(1);
+    }
+}
+
+public class MyThread extends Thread{
+    private MyService myService;
+    public MyThread(MyService myService){
+        super();
+        this.myService=myService;
+    }
+    @Override
+    public void run(){
+        myService.addNum();
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        try{
+        MyService service=new MyService();
+        MyThread[] myThreads=new MyThread[5];
+        for (int i=0;i<myThreads.length;i++){
+            myThreads[i]=new MyThread(service);
+        }
+        for (int i=0;i<myThreads.length;i++){
+            myThreads[i].start();
+        }
+        Thread.sleep(1000);
+        System.out.println(service.aiRef.get());    
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        
+    }
+}
+```
+
+运行发现打印出错，这是因为addAndGet()方法虽然是原子性的，但方法与方法之间的调用不是原子性的。
 
 #####参考:
 - JAVA多线程编程核心技术
