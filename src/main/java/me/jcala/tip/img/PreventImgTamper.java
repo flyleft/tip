@@ -8,7 +8,7 @@ import java.nio.channels.FileChannel;
 import java.security.MessageDigest;
 import java.util.Arrays;
 
-public class PreventImgTamper {
+public class PreventImgTamper{
 
     private static final String SALT="asksdosod";//md5加盐
 
