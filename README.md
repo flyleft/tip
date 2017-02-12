@@ -5,8 +5,10 @@
 - [多线程基础总结](https://github.com/jcalaz/tip/blob/master/blog/javase/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93.md)
 - [synchronized总结](https://github.com/jcalaz/tip/blob/master/blog/javase/synchronized%E6%80%BB%E7%BB%93.md)
 - [volatile总结](https://github.com/jcalaz/tip/blob/master/blog/javase/volatile%E6%80%BB%E7%BB%93.md)
-
 ---
+
+# 面试题
+- [面试题_基础]()
 
 # 博客和wiki收藏
 - [spring boot内存调优](http://spring.io/blog/2015/12/10/spring-boot-memory-performance)
