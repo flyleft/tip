@@ -35,6 +35,7 @@
 - [100个高质量Java开发者博客](http://www.importnew.com/7469.html)
 - [从源码角度认识ArrayList，LinkedList与HashMap](http://www.jianshu.com/p/f174d49b391c?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [HashMap 和 HashTable 源码学习和面试总结](http://www.cnblogs.com/kubixuesheng/p/6144535.html?utm_source=tuicool&utm_medium=referral)
+- [Java方法重载与重写（静态分派与动态分派）](http://www.mamicode.com/info-detail-564707.html)
 - [近5年133个Java面试问题列表](http://geek.csdn.net/news/detail/113566?utm_source=tuicool&utm_medium=referral)
 - [Java 进阶面试问题列表](https://zhuanlan.zhihu.com/p/24910702?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [gradle中文指导](https://dongchuan.gitbooks.io/gradle-user-guide-/)
