@@ -150,5 +150,5 @@ sendRedirect()方法会创建一个新的请求，而forward()方法只是把请
 一般认为sendRedirect()比forward()要慢。
 ```
 
-## 习题来源或参考：
+## 来源或参考：
    - 牛客网
