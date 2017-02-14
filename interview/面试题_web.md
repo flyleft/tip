@@ -76,5 +76,75 @@ D. page对象
    9、out 输出 ，但是尽量使用表达式输出
 
 ```
+
+#### 06. 说一下Servlet的体系结构。
+```
+所有的Servlet都必须要实现的核心的接口是javax.servlet.Servlet。
+每一个Servlet都必须要直接或者是间接实现这个接口，
+或者是继承javax.servlet.GenericServlet或者javax.servlet.http.HTTPServlet。
+最后，Servlet使用多线程可以并行的为多个请求服务。
+```
+
+#### 07. GenericServlet和HttpServlet有什么区别？
+```
+GenericServlet是一个通用的协议无关的Servlet，
+它实现了Servlet和ServletConfig接口。
+继承自GenericServlet的Servlet应该要覆盖service()方法。
+最后，为了开发一个能用在网页上服务于使用HTTP协议请求的Servlet，
+你的Servlet必须要继承自HttpServlet。这里有Servlet的例子。
+```
+
+#### 08. 什么是Servlet链(Servlet Chaining)？
+```
+Servlet链是把一个Servlet的输出发送给另一个Servlet的方法。
+第二个Servlet的输出可以发送给第三个Servlet，依次类推。
+链条上最后一个Servlet负责把响应发送给客户端。
+```
+
+#### 09. 如何知道是哪一个客户端的机器正在请求你的Servlet？
+```
+ServletRequest类可以找出客户端机器的IP地址或者是主机名。
+getRemoteAddr()方法获取客户端主机的IP地址，getRemoteHost()可以获取主机名。
+```
+
+#### 10. 什么是服务端包含(Server Side Include)？
+```
+服务端包含(SSI)是一种简单的解释型服务端脚本语言，大多数时候仅用在Web上，
+用servlet标签嵌入进来。SSI最常用的场景把一个或多个文件包含到Web服务器的一个Web页面中。
+当浏览器访问Web页面的时候，
+Web服务器会用对应的servlet产生的文本来替换Web页面中的servlet标签。
+```
+
+#### 11. 解释下Servlet的生命周期。
+```
+对每一个客户端的请求，Servlet引擎载入Servlet，调用它的init()方法，
+完成Servlet的初始化。然后，Servlet对象通过为每一个请求单独调用service()
+方法来处理所有随后来自客户端的请求，最后，调用Servlet
+(译者注：这里应该是Servlet而不是server)的destroy()方法把Servlet删除掉。
+```
+
+#### 12. HTTP响应的结构是怎么样的？
+```
+HTTP响应由三个部分组成：
+状态码(Status Code)：描述了响应的状态。可以用来检查是否成功的完成了请求。请求失败的情况下，状态码可用来找出失败的原因。如果Servlet没有返回状态码，默认会返回成功的状态码HttpServletResponse.SC_OK。
+HTTP头部(HTTP Header)：它们包含了更多关于响应的信息。比如：头部可以指定认为响应过期的过期日期，或者是指定用来给用户安全的传输实体内容的编码格式。如何在Serlet中检索HTTP的头部看这里。
+主体(Body)：它包含了响应的内容。它可以包含HTML代码，图片，等等。主体是由传输在HTTP消息中紧跟在头部后面的数据字节组成的。
+```
+
+#### 13. 什么是HTTP隧道？
+```
+HTTP隧道是一种利用HTTP或者是HTTPS把多种网络协议封装起来进行通信的技术。
+因此，HTTP协议扮演了一个打通用于通信的网络协议的管道的包装器的角色。
+把其他协议的请求掩盖成HTTP的请求就是HTTP隧道。
+```
+
+#### 14. sendRedirect()和forward()方法有什么区别？
+```
+sendRedirect()方法会创建一个新的请求，而forward()方法只是把请求转发到一个新的目标上。重定向(redirect)以后，
+之前请求作用域范围以内的对象就失效了，因为会产生一个新的请求，
+而转发(forwarding)以后，之前请求作用域范围以内的对象还是能访问的。
+一般认为sendRedirect()比forward()要慢。
+```
+
 ## 习题来源或参考：
    - 牛客网
