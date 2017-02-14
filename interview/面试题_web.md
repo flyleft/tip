@@ -115,12 +115,16 @@ getRemoteAddr()方法获取客户端主机的IP地址，getRemoteHost()可以获
 Web服务器会用对应的servlet产生的文本来替换Web页面中的servlet标签。
 ```
 
-#### 11. 解释下Servlet的生命周期。
+#### 11. 解释下Servlet的生命周期，并说出Servlet和CGI的区别。
 ```
 对每一个客户端的请求，Servlet引擎载入Servlet，调用它的init()方法，
 完成Servlet的初始化。然后，Servlet对象通过为每一个请求单独调用service()
 方法来处理所有随后来自客户端的请求，最后，调用Servlet
 (译者注：这里应该是Servlet而不是server)的destroy()方法把Servlet删除掉。
+
+与cgi的区别在于servlet处于服务器进程中，它通过多线程方式运行其service方法，
+一个实例可以服务于多个请求，并且其实例一般不会销毁，
+而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于servlet。
 ```
 
 #### 12. HTTP响应的结构是怎么样的？
