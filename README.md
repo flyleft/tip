@@ -5,7 +5,7 @@
 - [多线程基础总结](https://github.com/jcalaz/tip/blob/master/blog/javase/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93.md)
 - [synchronized总结](https://github.com/jcalaz/tip/blob/master/blog/javase/synchronized%E6%80%BB%E7%BB%93.md)
 - [volatile总结](https://github.com/jcalaz/tip/blob/master/blog/javase/volatile%E6%80%BB%E7%BB%93.md)
-
+- [JVM内存模型]()
 
 ---
 
@@ -29,7 +29,10 @@
 - [高性能队列——Disruptor](http://tech.meituan.com/disruptor.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [Mybatis源码解读-设计模式总结](http://www.crazyant.net/2022.html)
 - [Java动态绑定机制的内幕](https://zhuanlan.zhihu.com/p/24317613?utm_source=tuicool&utm_medium=referral)
+- [JVM垃圾收集器](http://www.javaranger.com/archives/636)
 - [透彻Linux(Unix)五种IO模型](http://mp.weixin.qq.com/s?__biz=MzIxMjAzMDA1MQ==&mid=2648945760&idx=1&sn=125c5e29e7e53e0e0c66d327fa09f828&chksm=8f5b536cb82cda7a6c7a4f57b4671439a558a2b695026090b5ef80899df1689981892e9c4724#rd)
+- [自己动手写JVM](http://bboyjing.github.io/categories/JVM/)
+- [JVM GC](http://www.blogjava.net/jinfeng_wang/archive/2016/12/14/432095.html?utm_source=tuicool&utm_medium=referral)
 - [JavaWeb项目为什么我们要放弃jsp？为什么要前后端解耦？为什么要动静分离？](http://blog.csdn.net/piantoutongyang/article/details/50878214?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [jps、jstack、jmap、jhat、jstat、hprof使用详解 ](http://josh-persistence.iteye.com/blog/2161848)
 - [Java压缩算法性能比较](http://codingo.xyz/index.php/2016/12/13/java_compress/)
