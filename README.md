@@ -6,6 +6,7 @@
 - [synchronized总结](https://github.com/jcalaz/tip/blob/master/blog/javase/synchronized%E6%80%BB%E7%BB%93.md)
 - [volatile总结](https://github.com/jcalaz/tip/blob/master/blog/javase/volatile%E6%80%BB%E7%BB%93.md)
 - [JVM内存模型](https://github.com/jcalaz/tip/blob/master/blog/javase/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md)
+- [JVM参数](https://github.com/jcalaz/tip/blob/master/blog/javase/JVM%E5%8F%82%E6%95%B0.md)
 
 ---
 

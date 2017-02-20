@@ -166,7 +166,26 @@
 缺省的 GC 日志时输出到终端的，使用 - Xloggc: 也可以输出到指定的文件。
 需要注意这个参数隐式的设置了参数 - XX:+PrintGC 和 - XX:+PrintGCTimeStamps。
 
+### 33. -XX:-UseBiasedLocking
+取消偏向锁,JDK1.6开始默认打开的偏向锁
+
+### 34. XX:+AlwaysPreTouch
+
+启动时就把参数里说好了的内存全部舔一遍，可能令得启动时慢上一点，但后面访问时会更流畅
+
+### 35. -XX:AutoBoxCacheMax=20000
+
+Integer i = 3;这语句有着 int自动装箱成Integer的过程，JDK默认只缓存 -128 ~ +127的int 和 long，
+超出范围的数字就要即时构建新的Integer对象。设为20000后，我们应用的QPS从48,000提升到50,000，足足4%的影响。
+
+### 36.  -XX:+PerfDisableSharedMem
+
+每次进入安全点（比如GC）, JVM都会默默的在/tmp/hperf 目录写上一点statistics数据，
+如果刚好遇到PageCache刷盘，把文件阻塞了，就不能结束这个Stop the World的安全点了。
+用此参数可以禁止JVM写statistics数据，代价是jps,jstats 用不了，只能用JMX取数据，但在生产环境本来就用JMX取数据。
+
 ---
 
 ## 来源： 
  - https://blog.codecentric.de/en/2014/01/useful-jvm-flags-part-8-gc-logging/
+ - http://calvin1978.blogcn.com/articles/jvmoption-2.html
