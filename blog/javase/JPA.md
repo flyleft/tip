@@ -162,6 +162,49 @@ private byte[] pic;
    }
 ```
 
+- **@OrderBy**: 对关联实体进行排序
+```java
+ Example 1:
+    @Entity
+    public class Course {
+       ...
+       @ManyToMany
+       @OrderBy("lastname ASC")
+       public List<Student> getStudents() {...};
+       ...
+    }
+    Example 2:
+    @Entity
+    public class Student {
+       ...
+       @ManyToMany(mappedBy="students")
+       @OrderBy // ordering by primary key is assumed
+       public List<Course> getCourses() {...};
+       ...
+    }
+    Example 3:
+    @Entity
+    public class Person {
+         ...
+       @ElementCollection
+       @OrderBy("zipcode.zip, zipcode.plusFour")
+       public Set<Address> getResidences() {...};
+       ...
+    }
+    @Embeddable
+    public class Address {
+       protected String street;
+       protected String city;
+       protected String state;
+       @Embedded protected Zipcode zipcode;
+    }
+    @Embeddable
+    public class Zipcode {
+       protected String zip;
+       protected String plusFour;
+    }
+```
+
 - **@JoinColumn**: 定义外键。**(修饰属性)**
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
@@ -217,25 +260,355 @@ private byte[] pic;
    | inverseJoinColumns | 否 |该属性值可接受多个@JoinColumn，用于配置连接表中外键列的列信息，这些列参照当前实体的关联实体对应表的主键列 |
    | uniqueConstraints  | 否 | 该属性为连接表增加唯一约束。 |
 
+- **@MapKey**: 使用Map集合记录关联实体。
+
 ### 2. 关联
 
-- **单向N-1关联**：使用**@ManyToOne**和**@JoinColumn**注解。
-比如多个人对应同一个地址，只需从人实体端可以找到对应的地址实体，无须关心某一个地址的全部住户。
-```
-@Entity
-@Table(name="address_table")
-public class Address{
-@Id
-private int addressid;
-@ManyToOne(optional=false,cascade=CascadeType.ALL,fetch=FetchType.LAZY,targetEntity=Person.class)
-@JoinColumn(name="person_id",nullable=false,updatable=false)//映射外键列
-private Person person;
+- **单向N-1关联**：使用**@ManyToOne**注解。
+比如一个人对应多个手机号,仅通过手机号获取用户，无需获取用户的手机号的场景。
+**当使用@JoinColumn通过外键实现，否则通过第三方表实现。**
+```java
+@Entity(name = "Person")
+public static class Person {
+    @Id
+    @GeneratedValue
+    private Long id;
+    public Person() {
+    }
 }
+@Entity(name = "Phone")
+public static class Phone {
+    @Id
+    @GeneratedValue
+    private Long id;
+    @Column(name = "`number`")
+    private String number;
+    @ManyToOne(optional=false,cascade=CascadeType.ALL,fetch=FetchType.LAZY,targetEntity=Person.class)
+    @JoinColumn(name = "person_id",
+            foreignKey = @ForeignKey(name = "PERSON_ID_FK")
+    )
+    private Person person;
+    public Phone() {
+    }
+    public Phone(String number) {
+        this.number = number;
+    }
+    public Long getId() {
+        return id;
+    }
+    public String getNumber() {
+        return number;
+    }
+    public Person getPerson() {
+        return person;
+    }
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+}
+```
+对应的sql语句：
+```sql
+CREATE TABLE Person (
+    id BIGINT NOT NULL ,
+    PRIMARY KEY ( id )
+)
+CREATE TABLE Phone (
+    id BIGINT NOT NULL ,
+    number VARCHAR(255) ,
+    person_id BIGINT ,
+    PRIMARY KEY ( id )
+ )
+ALTER TABLE Phone
+ADD CONSTRAINT PERSON_ID_FK
+FOREIGN KEY (person_id) REFERENCES Person
+```
+
+- **单向1-1关联**: 使用**@OneToOne**注解。
+比如一个人对应一个身份证Id,只需获取一个人的身份证号，而无需通过身份证号获取用户的情况。
+**当使用@JoinColumn通过外键实现，否则通过第三方表实现。**
+```java
 @Entity
 @Table(name="person_table")
 public class Person{
 @Id
 private int personid;
 private String name;
+@OneToOne(optional=false,cascade=CascadeType.ALL,fetch=FetchType.LAZY,targetEntity=IdCard.class)
+@JoinColumn(name="id_card_id",nullable=false,updatable=false)//映射外键列
+private IdCard idCard;
+}
+@Entity
+@Table(name="id_card_table")
+public class IdCard{
+@Id
+private int idCardId;
+private String cardNumber;
+}
+```
+
+- **单向1-N关联**：使用**@OneToMany**注解。
+-**对于1-N关联，应尽量设计为双向关联，而不是单向**
+比如一个人有多个手机号，仅需要获取一个人的手机号，而无需通过手机号获取用户的场景。
+**当使用@JoinColumn通过外键实现，否则通过第三方表实现。**
+```java
+@Entity(name = "Person")
+public static class Person {
+    @Id
+    @GeneratedValue
+    private Long id;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Phone> phones = new ArrayList<>();
+    public Person() {
+    }
+    public List<Phone> getPhones() {
+        return phones;
+    }
+}
+@Entity(name = "Phone")
+public static class Phone {
+    @Id
+    @GeneratedValue
+    private Long id;
+    @Column(name = "`number`")
+    private String number;
+    public Phone() {
+    }
+    public Phone(String number) {
+        this.number = number;
+    }
+    public Long getId() {
+        return id;
+    }
+    public String getNumber() {
+        return number;
+    }
+}
+```
+对应的sql：
+```sql
+CREATE TABLE Person (
+    id BIGINT NOT NULL ,
+    PRIMARY KEY ( id )
+)
+CREATE TABLE Person_Phone (
+    Person_id BIGINT NOT NULL ,
+    phones_id BIGINT NOT NULL
+)
+CREATE TABLE Phone (
+    id BIGINT NOT NULL ,
+    number VARCHAR(255) ,
+    PRIMARY KEY ( id )
+)
+ALTER TABLE Person_Phone
+ADD CONSTRAINT UK_9uhc5itwc9h5gcng944pcaslf
+UNIQUE (phones_id);
+ALTER TABLE Person_Phone
+ADD CONSTRAINT FKr38us2n8g5p9rj0b494sd3391
+FOREIGN KEY (phones_id) REFERENCES Phone;
+ALTER TABLE Person_Phone
+ADD CONSTRAINT FK2ex4e4p7w1cj310kg2woisjl2
+FOREIGN KEY (Person_id) REFERENCES Person
+```
+
+- **单向N-N关联**：使用**@ManyToMany**注解。
+比如一个人有多个住址，一个住址又对应多个用户，仅需通过用户获取住址列表的场景。
+**对于多对多关系，数据库底层只能通过关联表实现。**
+方式一：使用默认
+```java
+@Entity(name = "Person")
+public static class Person {
+    @Id
+    @GeneratedValue
+    private Long id;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Address> addresses = new ArrayList<>();
+    public Person() {
+    }
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+}
+@Entity(name = "Address")
+public static class Address {
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String street;
+    @Column(name = "`number`")
+    private String number;
+    public Address() {
+    }
+    public Address(String street, String number) {
+        this.street = street;
+        this.number = number;
+    }
+    public Long getId() {
+        return id;
+    }
+    public String getStreet() {
+        return street;
+    }
+    public String getNumber() {
+        return number;
+    }
+}
+```
+对应的sql：
+```sql
+CREATE TABLE Address (
+    id BIGINT NOT NULL ,
+    number VARCHAR(255) ,
+    street VARCHAR(255) ,
+    PRIMARY KEY ( id )
+)
+CREATE TABLE Person (
+    id BIGINT NOT NULL ,
+    PRIMARY KEY ( id )
+)
+CREATE TABLE Person_Address (
+    Person_id BIGINT NOT NULL ,
+    addresses_id BIGINT NOT NULL
+)
+ALTER TABLE Person_Address
+ADD CONSTRAINT FKm7j0bnabh2yr0pe99il1d066u
+FOREIGN KEY (addresses_id) REFERENCES Address;
+ALTER TABLE Person_Address
+ADD CONSTRAINT FKba7rc9qe2vh44u93u0p2auwti
+FOREIGN KEY (Person_id) REFERENCES Person
+```
+方式二：**通过@JoinTable配置关联表**
+```java
+@Entity(name = "Person")
+public static class Person {
+    @Id
+    @GeneratedValue
+    private Long id;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},targetEntity=Address.class)
+    @JoinTable(
+    name="person_address",
+    joinColumns=@JoinColumn(name="person_id"),
+    inverseJoinTableColumns=@JoinColumn(name="address_id")
+    )
+    private List<Address> addresses = new ArrayList<>();
+    public Person() {
+    }
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+}
+```
+
+- **双向1-1关联**: 使用**两边@OneToOne**注解和**mappedBy**属性
+双向需要两边实体类都增加@OneToOne，可在一边的实体类增加mappedBy属性。
+当使用mappedBy属性后表示当前实体不再控制关联联系，因此不可使用@JoinColumn。
+比如一个人一个精确住址，既可以通过用户获取住址，又可以通过住址获取该住户的场景。
+```java
+@Entity
+@Table(name="person_table")
+public class Person{
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private int personId;
+private String name;
+private int age;
+@OneToOne(mappedBy="person",cascade=CascadeType.ALL)
+private Address address;
+//...
+}
+@Entity
+@Table(name="address_table")
+public class Address{
+ @Id
+ private int addressId;
+ private String detail;
+ @OneToOne(optional=false,cascade=CascadeType.ALL)
+ @JoinColumn(name="person_id",nullable=false,updatable=false)
+ private Person person;
+ //...
+}
+```
+
+- **双向1-N关联**：使用**@OneToMany**和**@ManyToOne**注解和**mappedBy**属性
+**对于1-N关联，应尽量设计为双向关联，而不是单向，并且尽量使用N的一端来控制关联。**
+1的一端使用@OneToMany注解和mappedBy属性，N的一端使用@ManyToOne和@JoinColumn。
+比如一个人有多个住址，既可以通过用户获取住址，又可以通过住址获取用户的场景。
+```java
+@Entity
+@Table(name="person_table")
+public class Person{
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private int personId;
+private String name;
+private int age;
+@OneToMany(mappedBy="person",cascade=CascadeType.ALL)
+private Set<Address> addresses=new HashSet<Address>();
+//...
+}
+@Entity
+@Table(name="address_table")
+public class Address{
+ @Id
+ private int addressId;
+ private String detail;
+ @ManyToOne(optional=false,cascade=CascadeType.ALL)
+ @JoinColumn(name="person_id",nullable=true)
+ private Person person;
+ //...
+}
+```
+
+- **双向N-N关联**: 使用**两边@ManyToMany**注解，**一边mapperBy**属性和。
+对于N-N关联，底层数据库必须通过关联表来关联实体之间的关系。
+对于双向N-N关联，两边实体对等，一边通过mappedBy不再控制关系，另一边通过@JoinTable控制关系即可。
+比如多个人住在同一个地址，但一个人也可有多个住址，既可以通过用户找到住址列表，又可以通过住址找到用户列表的场景。
+```java
+@Entity
+@Table(name="person_table")
+public class Person{
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private int personId;
+private String name;
+private int age;
+@ManyToMany(mappedBy="persons",cascade=CascadeType.ALL)
+private Set<Address> addresses=new HashSet<Address>();
+//...
+}
+@Entity
+@Table(name="address_table")
+public class Address{
+ @Id
+ private int addressId;
+ private String detail;
+ @ManyToMany(optional=false,cascade=CascadeType.ALL)
+ @JoinColumn(name="person_id",nullable=true)
+ @JoinTable(
+    name="person_address",
+    joinColumns=@JoinColumn(name="address_id"),
+    inverseJoinTableColumns=@JoinColumn(name="person_id")
+ )
+ private Set<Person> persons=new HashSet<Person>();
+ //...
+}
+```
+
+- 使用Map集合记录关联实体：使用**@MapKey**注解：
+比如一个人有多个住址，既可以通过用户获取住址，又可以通过住址获取用户的场景。
+使用@MapKey时必须指定一个name属性，name属性的属性值为当前实体的关联实体中标识属性的属性名。
+```java
+@Entity
+@Table(name="person_table")
+public class Person{
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private int personId;
+private String name;
+private int age;
+@OneToMany(mappedBy="person",cascade=CascadeType.ALL)
+@MapKey(name="pk")
+private Map<AddressPk,Address> addresses=new HashMap<AddressPk,Address>();
+//...
 }
 ```
