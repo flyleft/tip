@@ -81,6 +81,7 @@ public class Person {
 - **@Id**和**@GeneratedValue**：映射实体类的主键。**(修饰属性)**
 @Id定义主键，可以是基本类型，基本类型的包装类，String，Date等类型。
 @GeneratedValue：设置自动生成属性值，属性如下：
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | strategy | 否 | 使用怎样的主键生成策略。GenerationType.AUTO：JPA自动选择最适合底层数据库的主键生成策略; GenerationType.IDENTITY: 对于mysql，sqlserver这样的数据库选择自增长的主键生成策略；GenerationType.SEQUENCE: 对于oracle这样的数据库，选择使用基于sequence的主键生成策略，应与@SequenceGenderator一起使用；GenerationType.TABLE：使用一个辅助表来生成主键，应与@TableGenderator一起使用|
@@ -122,6 +123,7 @@ private byte[] pic;
 
 - **@Embedded**和**@Embeddable**: 映射复合类型。@Embeadded修饰这个复合类型属性，@Embeaddable修饰这个复合类。
 @AttributeOverride用来指定复合类型的成员属性的映射配置，它支持的属性：
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | name       | 是 | 指定对复合类型中哪个属性进行配置 |
@@ -190,32 +192,26 @@ private byte[] pic;
 
 - **@OrderBy**: 对关联实体进行排序
 ```java
- Example 1:
+   //Example 1:
     @Entity
     public class Course {
-       ...
        @ManyToMany
        @OrderBy("lastname ASC")
-       public List<Student> getStudents() {...};
-       ...
+       public List<Student> getStudents() {};
     }
-    Example 2:
+    //Example 2:
     @Entity
     public class Student {
-       ...
        @ManyToMany(mappedBy="students")
        @OrderBy // ordering by primary key is assumed
-       public List<Course> getCourses() {...};
-       ...
+       public List<Course> getCourses() {};
     }
-    Example 3:
+    //Example 3:
     @Entity
     public class Person {
-         ...
        @ElementCollection
        @OrderBy("zipcode.zip, zipcode.plusFour")
-       public Set<Address> getResidences() {...};
-       ...
+       public Set<Address> getResidences() {};
     }
     @Embeddable
     public class Address {
@@ -232,6 +228,7 @@ private byte[] pic;
 ```
 
 - **@JoinColumn**: 定义外键。**(修饰属性)**
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | columnDefinition | 否 | 指定JPA使用该属性值指定的SQL片段来创建外键列 |
@@ -244,6 +241,7 @@ private byte[] pic;
    | referenceColumnName | 否| 指定该列所参照的主键列的列名 |
 
 - **@ManyToOne**: 映射多对一关系。**(修饰属性)**
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | cascade     | 否 | 指定JPA对关联实体采用怎样的级联策略，该级联策略支持四个属性值。CascadeType.ALL：指定JPA将所有的持久化操作都级联到关联实体；CascadeType.MERGE: 指定JPA将merge操作都级联到关联实体；CascadeType.PERSIST：指定JPA将persist操作级联到关联实体；CascadeType.REFRESH: 指定JPA将refresh操作级联到关联实体；CascadeType.REMOVE: 指定JPA将remove操作关联到关联实体|
@@ -252,6 +250,7 @@ private byte[] pic;
    | targetEntity| 否 | 该属性指定关联实体的类名。 在默认情况下，JPA通过反射判断 |
 
 - **@OneToOne**: 映射一对一关系。**(修饰属性)**
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | cascade     | 否 | 指定JPA对关联实体采用怎样的级联策略，该级联策略支持四个属性值。CascadeType.ALL：指定JPA将所有的持久化操作都级联到关联实体；CascadeType.MERGE: 指定JPA将merge操作都级联到关联实体；CascadeType.PERSIST：指定JPA将persist操作级联到关联实体；CascadeType.REFRESH: 指定JPA将refresh操作级联到关联实体；CascadeType.REMOVE: 指定JPA将remove操作关联到关联实体|
@@ -261,6 +260,7 @@ private byte[] pic;
    | mappedBy    | 否 | 该属性合法的属性值为关联实体的属性名，该属性指定关联实体中哪一个属性可引用到关联实体时采取抓取。 |
 
 - **@OneToMany**：映射一对多关系。**(修饰属性)**
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | cascade     | 否 | 指定JPA对关联实体采用怎样的级联策略，该级联策略支持四个属性值。CascadeType.ALL：指定JPA将所有的持久化操作都级联到关联实体；CascadeType.MERGE: 指定JPA将merge操作都级联到关联实体；CascadeType.PERSIST：指定JPA将persist操作级联到关联实体；CascadeType.REFRESH: 指定JPA将refresh操作级联到关联实体；CascadeType.REMOVE: 指定JPA将remove操作关联到关联实体|
@@ -269,6 +269,7 @@ private byte[] pic;
    | mappedBy    | 否 | 该属性合法的属性值为关联实体的属性名，该属性指定关联实体中哪一个属性可引用到关联实体时采取抓取。 |
 
 - **@ManyToMany**：映射多对多关系。**(修饰属性)**
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | cascade     | 否 | 指定JPA对关联实体采用怎样的级联策略，该级联策略支持四个属性值。CascadeType.ALL：指定JPA将所有的持久化操作都级联到关联实体；CascadeType.MERGE: 指定JPA将merge操作都级联到关联实体；CascadeType.PERSIST：指定JPA将persist操作级联到关联实体；CascadeType.REFRESH: 指定JPA将refresh操作级联到关联实体；CascadeType.REMOVE: 指定JPA将remove操作关联到关联实体|
@@ -277,6 +278,7 @@ private byte[] pic;
    | mappedBy    | 否 | 该属性合法的属性值为关联实体的属性名，该属性指定关联实体中哪一个属性可引用到关联实体时采取抓取。 |
 
 - **@JoinTable**：专门用于多对多关联关系指定连接表的配置信息。
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | name    | 否 | 指定该连接表的表名 |
@@ -296,10 +298,10 @@ private byte[] pic;
         @Version protected Integer version;
         @ManyToOne @JoinColumn(name="ADDR")
         protected Address address;
-        public Integer getEmpId() { ... }
-        public void setEmpId(Integer id) { ... }
-        public Address getAddress() { ... }
-        public void setAddress(Address addr) { ... }
+        public Integer getEmpId() { }
+        public void setEmpId(Integer id) {  }
+        public Address getAddress() { }
+        public void setAddress(Address addr) { }
     }
     // Default table is FTEMPLOYEE table
     @Entity
@@ -310,8 +312,8 @@ private byte[] pic;
         // Defaults to FTEMPLOYEE.SALARY
         protected Integer salary;
         public FTEmployee() {}
-        public Integer getSalary() { ... }
-        public void setSalary(Integer salary) { ... }
+        public Integer getSalary() { }
+        public void setSalary(Integer salary) { }
     }
     @Entity @Table(name="PT_EMP")
     @AssociationOverride(
@@ -324,8 +326,8 @@ private byte[] pic;
         @Column(name="WAGE")
         protected Float hourlyWage;
         public PartTimeEmployee() {}
-        public Float getHourlyWage() { ... }
-        public void setHourlyWage(Float wage) { ... }
+        public Float getHourlyWage() {}
+        public void setHourlyWage(Float wage) {}
     }
 ```
 
@@ -335,6 +337,7 @@ private byte[] pic;
    InheritanceType.TABLE_PER_CLASS： 每个具体的类一个表的策略。
 
 - **@DiscriminatorColumn**:在整个类层次对应一张表策略的映射策略中配置辨别列。
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | columnDefinition    | 否 | 指定JPA使用该属性值指定的SQL片段来创建外键列 |
