@@ -1,4 +1,8 @@
-### 1. JPA注解
+> 个人的JPA参考手册，尚未整理完毕，会更新
+
+githu地址：https://github.com/jcalaz/tip
+
+### 1. JPA普通注解
 - **@Entity**: 声明为一个实体。**(修饰实体类)**
 - **@Table**: 指定实体所映射的表。**(修饰实体类)**
 
@@ -8,6 +12,26 @@
   | catalog | 否 | 设置实体映射的表放入指定的catalog中。不指定则放入默认的catalog中 |
   | schema  | 否 | 设置实体映射的表放入指定的schema中。 不指定则放入默认的schema中 |
   | uniqueConstraints| 否 | 为实体映射的表设置唯一的约束。该属性可以是一个@UniqueConstraint Annotation数组 |
+
+- **@Indexed**：定义索引
+```java
+@Entity
+@Table(name="person_table", indexes = {
+		@Index(name="idx_person", columnList="name")
+		})
+@NamedQuery(
+	    name="simpleByTest",
+	    query="SELECT x FROM SimpleModel x WHERE x.test LIKE :test"
+	)
+public class Person {
+
+	@Id
+	@GeneratedValue
+	private Long id;
+    private String name;
+    //...
+}
+```
 
 - **@secondaryTable**: 把实体的部分属性映射到第二个数据表。可通过@secondaryTable指定多个额外的数据表。**(修饰实体类)**
    | 属性 | 是否必要 | 说明 |
@@ -262,7 +286,77 @@ private byte[] pic;
 
 - **@MapKey**: 使用Map集合记录关联实体。
 
-### 2. 关联
+- **MappedSuperClass**: 映射为非实体父类，该实体父类不会生成对应的数据表
+```java
+ @MappedSuperclass
+    public class Employee {
+        @Id protected Integer empId;
+        @Version protected Integer version;
+        @ManyToOne @JoinColumn(name="ADDR")
+        protected Address address;
+        public Integer getEmpId() { ... }
+        public void setEmpId(Integer id) { ... }
+        public Address getAddress() { ... }
+        public void setAddress(Address addr) { ... }
+    }
+    // Default table is FTEMPLOYEE table
+    @Entity
+    public class FTEmployee extends Employee {
+        // Inherited empId field mapped to FTEMPLOYEE.EMPID
+        // Inherited version field mapped to FTEMPLOYEE.VERSION
+        // Inherited address field mapped to FTEMPLOYEE.ADDR fk
+        // Defaults to FTEMPLOYEE.SALARY
+        protected Integer salary;
+        public FTEmployee() {}
+        public Integer getSalary() { ... }
+        public void setSalary(Integer salary) { ... }
+    }
+    @Entity @Table(name="PT_EMP")
+    @AssociationOverride(
+        name="address",
+        joincolumns=@JoinColumn(name="ADDR_ID"))
+    public class PartTimeEmployee extends Employee {
+        // Inherited empId field mapped to PT_EMP.EMPID
+        // Inherited version field mapped to PT_EMP.VERSION
+        // address field mapping overridden to PT_EMP.ADDR_ID fk
+        @Column(name="WAGE")
+        protected Float hourlyWage;
+        public PartTimeEmployee() {}
+        public Float getHourlyWage() { ... }
+        public void setHourlyWage(Float wage) { ... }
+    }
+```
+
+- **@Inheritance**：指定映射策略
+   InheritanceType.SINGLE_TABLE： 整个类层次对应一张表策略,这是继承映射的默认策略。
+   InheritanceType.JOINED：连接子类策略。父亲的放在一张表，儿子只是保存和父亲不一样的，增加的属性。
+   InheritanceType.TABLE_PER_CLASS： 每个具体的类一个表的策略。
+
+- **@DiscriminatorColumn**:在整个类层次对应一张表策略的映射策略中配置辨别列。
+   | 属性 | 是否必要 | 说明 |
+   | :-------------- | :------------ | :------------ |
+   | columnDefinition    | 否 | 指定JPA使用该属性值指定的SQL片段来创建外键列 |
+   | name                | 否 | 指定辨别列的名称，默认值为"DTYPE" |
+   | discriminatorType   | 否 | 指定该辨别者列的数据类型。 DiscriminatorType.CHAR: 辨别者列的类型是字符类型，即该列只接受单个字符；DiscriminatorType.INTEGER：辨别者列的类型是整数类型，即该列只接受整数值；DiscriminatorType.STRING：辨别者列的类型是字符串类型，即该列只接受字符串值，为默认值|
+   | length              | 否 | 该属性指定辨别者的字符长度 |
+
+### 2. JPA生命周期注解
+- **@PerPersist**：保存实体之前回调它修饰的方法。
+- **@PostPersist**：保存实体之后回调它修饰的方法。
+- **@PreRemove**：删除实体之前回调它修饰的方法。
+- **@PostRemove**：删除实体之后回调它修饰的方法。
+- **@PreUpdate**：更新实体之前回调它修饰的方法。
+- **@PostUpdate**：更新实体之后回调它修饰的方法。
+- **@PostLoad**：记载实体之后回调它修饰的方法。
+- **@EntityListeners**: 自定义专门的监听器
+```java
+@Entity
+@EntityListeners(PersonListener.class)
+public class Person implements Serializable{}
+```
+- **@ExcludeDefaultListeners和@ExcludeSuperclassListeners**：排除监听器。
+
+### 3. 关联
 
 - **单向N-1关联**：使用**@ManyToOne**注解。
 比如一个人对应多个手机号,仅通过手机号获取用户，无需获取用户的手机号的场景。
@@ -612,3 +706,93 @@ private Map<AddressPk,Address> addresses=new HashMap<AddressPk,Address>();
 //...
 }
 ```
+
+### 4. JPA映射策略
+```
+JPA提供了3种映射策略：
+(1)、 整个类层次对应一张表策略,这是继承映射的默认策略。
+即如果实体类B继承实体类A，实体类C也继承自实体A，那么只会映射成一个表，
+这个表中包括了实体类A、B、C中所有的字段，JPA使用一个叫做“discriminator列”来区分某一行数据是应该映射成哪个实体。
+注解为：@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+(2)、 连接子类策略。父亲的放在一张表，儿子只是保存和父亲不一样的，增加的属性。
+这种情况下子类的字段被映射到各自的表中，这些字段包括父类中的字段，并执行一个join操作来实例化子类。
+注解为：@Inheritance(strategy = InheritanceType.JOINED)
+(3)、 每个具体的类一个表的策略。
+注解为：@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+可使用@Inheritance指定映射策略
+InheritanceType.SINGLE_TABLE：第一种
+InheritanceType.JOINED：第二种
+InheritanceType.TABLE_PER_CLASS：第三种
+```
+
+- **整个类层次对应一张表策略**。
+这种策略下，整个类层次所有的实体都存放在一张数据表中，系统通过在该表增加额外的一个辨别列，用来区分每行记录到底是哪一个类的实例。
+使用@DiscriminatorColumn来配置辨别列。
+```java
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+// 定义辨别者列的列名为person_type，列类型为字符串
+@DiscriminatorColumn(name="person_type" ,
+    discriminatorType=DiscriminatorType.STRING)
+// 指定Person实体对应的记录在辨别者列的值为"普通人"
+@DiscriminatorValue("普通人")
+@Table(name="person_inf")
+public class Person{}
+// 顾客类继承了Person类
+@Entity
+// 指定Customer实体对应的记录在辨别者列的值为"顾客"
+@DiscriminatorValue("顾客")
+@Table(name="customer_inf")
+public class Customer extends Person{}
+// 员工类继承了Person类
+@Entity
+// 指定Employee实体对应的记录在辨别者列的值为"员工"
+@DiscriminatorValue("员工")
+@Table(name="employee_inf")
+public class Employee extends Person{}
+```
+
+- **连接子类的映射策略**
+这种策略中父类实体保存在父类表中，而子类实体由父亲表和子类表共同存储，父类和子类共有部分存储在父类表，子类单独存在属性存储在子类表中。
+无需使用辨别者，只需要在继承树的根实体类上使用@Inheritance,指定strategy=InheritanceType.JOINED即可
+```java
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@Table(name="person_inf")
+public class Person{}
+@Entity
+@Table(name="customer_inf")
+public class Customer extends Person{}
+@Entity
+@Table(name="employee_inf")
+public class Employee extends Person{}
+```
+
+- **每个具体的类一个表的策略**
+子类实例仅保存在子类表中，在父类表中没有任何记录。
+单从数据库来看，几乎难以看出继承关系，只是多个实体之间主键存在某种连续性，因此不能让数据库自动生成主键，因此**不能使用GenerationType.IDENTITY和GenerationType.AUTO这两种主键生成策略**。
+无需使用辨别者，只需要在继承树的根实体类上使用@Inheritance,指定strategy=InheritanceType.TABLE_PER_CLASS即可
+```java
+@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+@Table(name="person_inf")
+public class Person{}
+```
+
+### 5. spring data注解
+- **@CreatedBy**：Declares a field as the one representing the principal that created the entity containing the field.
+- **@CreatedDate**：Declares a field as the one representing the date the entity containing the field was created.
+- **@Id**：Demarcates an identifier.
+- **@LastModifiedBy**：Declares a field as the one representing the principal that recently modified the entity containing the field.
+- **@LastModifiedDate**：Declares a field as the one representing the date the entity containing the field was recently modified.
+- **@ReadOnlyProperty**：Marks a field to be read-only for the mapping framework and therefore will not be persisted.
+- **@Reference**：Meta-annotation to be used to annotate annotations that mark references to other objects.
+- **@Transient**：Marks a field to be transient for the mapping framework. Thus the property will not be persisted and not further inspected by the mapping framework.
+- **@TypeAlias**：Annotation to allow String based type aliases to be used when writing type information for PersistentEntitys.
+- **@version**: 定义一个属性为版本字段用于实现乐观锁
+
+### 参考
+- 《经典JAVAEE企业应用实战》
+- JPA API
+- spring data commons源码
+- http://blog.csdn.net/u012881904/article/details/51059156
