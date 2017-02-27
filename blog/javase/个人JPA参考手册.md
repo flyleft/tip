@@ -34,6 +34,7 @@ public class Person {
 ```
 
 - **@secondaryTable**: 把实体的部分属性映射到第二个数据表。可通过@secondaryTable指定多个额外的数据表。**(修饰实体类)**
+
    | 属性 | 是否必要 | 说明 |
    | :-------------- | :------------ | :------------ |
    | name       | 否 | 指定新数据表的表名 |
@@ -48,6 +49,7 @@ public class Person {
    | name                | 否 | 指定从表中的外键列的列名 |
    | columnDefinition    | 否 | 指定JPA使用该属性值指定的SQL片段来创建外键列 |
    | referencedColumnName| 否 | 指定从表中外键参照的数据列的列名 |
+   
    ```
    @Entity
    @Table(name="person_table")
