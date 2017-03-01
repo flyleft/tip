@@ -139,6 +139,9 @@ public class Main{
 
 运行发现打印出错，这是因为addAndGet()方法虽然是原子性的，但方法与方法之间的调用不是原子性的。
 
+-  
+
 #####参考:
 - JAVA多线程编程核心技术
 - 深入理解Java虚拟机
+- http://www.codeceo.com/article/jvm-memory-model-visual.html?utm_source=tuicool&utm_medium=referral
