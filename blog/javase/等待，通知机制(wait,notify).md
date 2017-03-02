@@ -4,11 +4,11 @@
 2. ### 等待/通知机制的实现
 
    Object类的wait()方法可以使调用该方法的线程释放共享资源的锁，然后从运行状态退出，进入等待队列，直到被再次唤醒。
-   
+
    Object类的wait(long timeout)方法：等待某一个时间内是否有线程对锁进行唤醒，如果超过这个时间将自动唤醒。
 
    Object类的wait(long timeout,int nanos)方法：等待某一个时间内是否有线程对锁进行唤醒，如果超过这个时间将自动唤醒。相比wait(long timeout)，控制时间更精确，时间为1000000*timeout+nanos 纳秒
-   
+
    Object类的notify()方法可以随机唤醒等待队列中等待同一共享资源的**一个**线程，并使该线程退出等待队列，进入可运行的状态，也就是notify()方法仅通知"一个"线程。
 
    Object类的notifyAll()方法可以使所有正在等待队列中等待同一资源的**全部**线程从等待状态退出，进入可运行的状态。此时，优先级最高的线程执行，但也有可能随机执行，这要取决于JVM的实现。
@@ -30,7 +30,7 @@ public class Main{
   }catch (InterruptedException e){
       e.printStackTrace();
   }
- }    
+ }
 }
 ```
 输出: one two
@@ -56,7 +56,7 @@ public class WaitThread  extends Thread{
               e.printStackTrace();
           }
     }
-} 
+}
 
 public class NotifyThread  extends Thread{
     private Object lock;
@@ -99,17 +99,17 @@ public class Main{
 4. ### wait/notify注意事项和问题。
 
    - 执行完wait后会释放锁， 在执行notify()方法后，当前线程不会立刻释放该对象锁。呈wait状态的线程并不能马上获取该对象锁，要等执行notify()方法的线程将程序执行完，也就是退出synchronized代码块后，当前线程才会释放锁。
-      
+
    - 在调用wait()或notify()方法之前，必须获得该对象的对象级别锁，即只能在同步方法或者同步块中调用wait()方法，在执行wait()方法之后，当前线程释放锁。
-   
+
    - 在调用notify通知某线程后，该线程不会立即进入Running状态，而是先进入Runnable状态。
-      
+
    - notify每次仅通知一个线程，多次调用可将wait线程全部唤醒。
-   
+
    - 当线程呈wait状态时，调用线程对象的**interrupt**方法会抛出InterruptedException异常。
-   
+
    - **通知过早**: 如果通知过早，会打乱程序正常运行逻辑。
-      
+
       比如demo(2)中将Main类改为NotifyThread线程先执行。
       ```java
       public class Main{
@@ -128,13 +128,13 @@ public class Main{
       }
       ```
       此时wait线程不会被通知。
-      
+
    - 等待wait的条件发生变化。
    ```java
     public class ValueObj{
      public static java.util.List list=new java.util.ArrayList();
     }
- 
+
     public class Add{
      private String lock;
      public Add(String lock){
@@ -173,11 +173,11 @@ public class Main{
       new Thread((Subtract r)-> r.subtract()).start();
       Thread.sleep(1000);
       new Thread((Add p)-> p.add()).start();
-     } 
+     }
     }
    ```
    运行将发生异常。原因是两个减操作都执行了wait方法呈wait状态，当执行加操作list的size为1，且通知两个减操作继续执行，因为list的size为1，第二个减操作将发生索引溢出异常。
-   
+
    要想正确应修正subtract的方法，如下：
    ```java
     public class Subtract{
@@ -201,17 +201,17 @@ public class Main{
 
 5. ### 线程状态切换
     ![等待通知_01](../../pics/等待通知_01.jpg)
-    
+
     **Java中线程中状态可分为五种：New（新建状态），Runnable（就绪状态），Running（运行状态），Blocked（阻塞状态），Dead（死亡状态）。**
-       
+
        　　New：新建状态，当线程创建完成时为新建状态，即new Thread(...)，还没有调用start方法时，线程处于新建状态。
-       
+
        　　Runnable：就绪状态，当调用线程的的start方法后，线程进入就绪状态，等待CPU资源。处于就绪状态的线程由Java运行时系统的线程调度程序(thread scheduler)来调度。
-       
+
        　　Running：运行状态，就绪状态的线程获取到CPU执行权以后进入运行状态，开始执行run方法。
-       
+
        　　Blocked：阻塞状态，线程没有执行完，由于某种原因（如，I/O操作等）让出CPU执行权，自身进入阻塞状态。
-       
+
        　　Dead：死亡状态，线程执行完成或者执行过程中出现异常，线程就会进入死亡状态。
 
     1. 新建一个线程后，调用它的start()方法,系统会为此线程分配CPU资源，使其处于Runnable(可运行)状态，这是一个准备的阶段。如果线程抢占到CPU资源，此线程就处于Running(运行)状态。
