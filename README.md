@@ -28,6 +28,8 @@
 - [面试题_数据库](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_%E6%95%B0%E6%8D%AE%E5%BA%93.md) 
 - [面试题_JVM与内存](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_JVM%E4%B8%8E%E5%86%85%E5%AD%98.md)
 
+---
+
 # 博客和wiki收藏
 - [spring boot内存调优](http://spring.io/blog/2015/12/10/spring-boot-memory-performance)
 - [关键业务系统的JVM参数推荐](http://calvin1978.blogcn.com/articles/jvmoption-2.html?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
