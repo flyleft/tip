@@ -20,6 +20,11 @@
 
 ---
 
+# 设计模式
+- [面向对象七大设计原则](https://github.com/jcalaz/tip/blob/master/design_pattern/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99.md)
+
+---
+
 # 面试题
 - [面试题_基础](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_%E5%9F%BA%E7%A1%80.md)
 - [面试题_web](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_web.md)
