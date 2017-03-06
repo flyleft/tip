@@ -14,21 +14,49 @@ public class Maze {
             {1, 1, 0, 0, 0, 1, 0, 1},
             {1, 1, 0, 0, 0, 0, 0, 0}
     };
-    public static void main(String args){
+    public static void main(String args[]){
+        int x=0,y=0;
+        TraceRecord record=new TraceRecord();
+        record.push(x,y);
+        while(x<=exitX && y<=exity){
+            array[x][y]=2;
+            if (x>0 && array[x-1][y]==0){
+                x=x-1;
+                record.push(x,y);
+            }else if (x<exitX && array[x+1][y]==0){
+                x=x+1;
+                record.push(x,y);
+            }else if (y>0 && array[x][y-1]==0){
+                y=y-1;
+                record.push(x,y);
+            }else if(y< exity&&array[x][y+1]==0){
+                y=y+1;
+                record.push(x,y);
+            }else if (checkExit(x,y)){
+                record.push(x,y);
+                break;
+            }else {
+              array[x][y]=2;
+              record.pop();
+              x=record.last.x;
+              y=record.last.y;
+            }
+        }
+        Node temp=record.first;
+        while (temp.next!=null){
+            System.out.print("("+temp.x+","+temp.y+"), ");
+            temp=temp.next;
+        }
 
     }
-    public static void execute(int[][] array){
-        TraceRecord record=new TraceRecord();
-        record.push(new Node(1,0));
-        record.push(new Node(2,0));
-    }
-    public static boolean checkExit(int x,int y,int exitX,int exity{
+    public static boolean checkExit(int x,int y){
        if (x==exitX && y==exity){
            if (array[x-1][y]==1||array[x+1][y]==1||array[x][y-1]==1||array[x][y+1]==2) return true;
            if (array[x-1][y]==1||array[x+1][y]==1||array[x][y-1]==2||array[x][y+1]==1) return true;
            if (array[x-1][y]==1||array[x+1][y]==2||array[x][y-1]==2||array[x][y+1]==1) return true;
            if (array[x-1][y]==2||array[x+1][y]==2||array[x][y-1]==2||array[x][y+1]==1) return true;
        }
+       return false;
     }
 }
 class Node{
@@ -49,7 +77,8 @@ class TraceRecord{
     public boolean isEmpty(){
       return first==null;
     }
-    public void push(Node node){
+    public void push(int x,int y){
+        Node node=new Node(x,y);
         if (first==null){
             first=node;
             last=node;
@@ -63,7 +92,7 @@ class TraceRecord{
             System.out.println("栈已空");
             return;
         }
-        Node temp=null;
+        Node temp=first;
         while (temp.next!=last){
            temp=temp.next;
         }
