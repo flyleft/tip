@@ -17,7 +17,7 @@
 
 # 数据结构
 - [时间复杂度](https://github.com/jcalaz/tip/blob/master/data_structure/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.md)
-
+- [数据结构-线性表](https://github.com/jcalaz/tip/blob/master/data_structure/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8.md)
 ---
 
 # 设计模式
