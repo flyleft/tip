@@ -1,4 +1,4 @@
-package me.jcala.tip.data.structure.Singly_linked_list;
+package me.jcala.tip.data.structure.singly_linked_list;
 
 public class Node<E> {
     private E data;

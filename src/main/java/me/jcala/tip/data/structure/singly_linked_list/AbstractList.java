@@ -1,4 +1,4 @@
-package me.jcala.tip.data.structure.Singly_linked_list;
+package me.jcala.tip.data.structure.singly_linked_list;
 
 public abstract class AbstractList<E> {
     //向链表的末尾增加一个元素

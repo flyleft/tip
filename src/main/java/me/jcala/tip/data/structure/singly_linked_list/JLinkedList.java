@@ -1,10 +1,10 @@
-package me.jcala.tip.data.structure.Singly_linked_list;
+package me.jcala.tip.data.structure.singly_linked_list;
 
 
 import java.io.Serializable;
-import java.util.LinkedList;
 
 public class JLinkedList<E> extends AbstractList<E> implements Serializable{
+    private static final long serialVersionUID = -6018289474860213351L;
     transient private int size;
     transient private Node<E> first;
     transient private Node<E> last;
