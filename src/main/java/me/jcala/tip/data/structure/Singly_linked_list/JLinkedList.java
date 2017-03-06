@@ -2,12 +2,12 @@ package me.jcala.tip.data.structure.Singly_linked_list;
 
 
 import java.io.Serializable;
+import java.util.LinkedList;
 
 public class JLinkedList<E> extends AbstractList<E> implements Serializable{
     transient private int size;
     transient private Node<E> first;
     transient private Node<E> last;
-
     public JLinkedList() {
     }
     public JLinkedList(int size) {
