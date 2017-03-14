@@ -31,6 +31,11 @@
 
 ---
 
+# LeetCode
+- [leetcode刷题(一)](https://github.com/jcalaz/tip/blob/master/algorithm/leetcode%E5%88%B7%E9%A2%98(%E4%B8%80).md)
+
+---
+
 # 面试题
 - [面试题_基础](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_%E5%9F%BA%E7%A1%80.md)
 - [面试题_web](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_web.md)
