@@ -238,4 +238,66 @@ Output: "bb"
 **解法一：**
 
 ```java
+public class Longest_Palindromic_Substring {
+    public static void main(String args[]){
+        Longest_Palindromic_Substring test=new Longest_Palindromic_Substring();
+        long start=System.currentTimeMillis();
+        System.out.println(test.longestPalindrome("aba"));
+        System.out.println(System.currentTimeMillis()-start);
+    }
+    public String longestPalindrome(String s) {
+        int len=s.length();
+        if (len < 2)
+            return s;
+        String maxPal="";
+        for (int i=0;i<len-1;i++){
+            if (maxPal.length()>=len-i){
+               break;
+            }
+          for (int j=len;j>=i+1;j--){
+              if (maxPal.length()>=j-i){
+                  break;
+              }
+              if (isPalindromic(s,i,j) && (j-i)>maxPal.length()){
+                  maxPal=s.substring(i,j);
+                  break;
+              }
+          }
+        }
+        return maxPal;
+    }
+    public boolean isPalindromic(String s,int start,int end){
+        int len=end-start;
+        if (len<2){
+            return true;
+        }
+        for (int i=start;i<start+len/2;i++){
+            if (s.charAt(i)!=s.charAt(--end)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
+### 6. ZigZag Conversion
+
+```
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+
+P   A   H   N
+A P L S I I G
+Y   I   R
+
+And then read line by line: "PAHNAPLSIIGYIR"
+Write the code that will take a string and make this conversion given a number of rows:
+
+string convert(string text, int nRows);
+convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
+```
+
+**解法一：**
+
+```java
 ```
