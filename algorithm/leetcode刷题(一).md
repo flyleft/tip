@@ -298,6 +298,146 @@ convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 ```
 
 **解法一：**
+```java
+public class ZigZag_Conversion {
+    public static void main(String args[]){
+        ZigZag_Conversion conversion=new ZigZag_Conversion();
+        System.out.println(conversion.convert("ABC",2));
+    }
+    public String convert(String s, int numRows) {
+        if (numRows<2 || s.length()<=numRows){
+            return s;
+        }
+        String str="";
+        int interval=numRows*2-2;
+        for (int i=0;i<numRows;i++){
+            for (int j=i;j<s.length();j=j+interval){
+                 str=str+s.charAt(j);//加上正常列的值
+                if (i>0 && i< numRows-1){//加上斜列的值
+                    int k=j+2*(numRows-1-i);
+                    if (k<s.length()){
+                        str=str+s.charAt(k);
+                    }
+                }
+            }
+        }
+        return str;
+    }
+}
+```
+
+### 7. Reverse Integer
+
+```
+Reverse digits of an integer.
+
+Example1: x = 123, return 321
+Example2: x = -123, return -321
+
+click to show spoilers.
+
+Note:
+The input is assumed to be a 32-bit signed integer.
+Your function should return 0 when the reversed integer overflows.
+```
+
+**解法一：**
+```java
+public class Reverse_Integer {
+    public static void main(String args[]){
+        System.out.println(new Reverse_Integer().reverse(56885));
+    }
+    public int reverse(int x) {
+        boolean isNegative=x<0;
+        int y=Math.abs(x);
+        long z=0;
+        while (y>0){
+            z=z*10+(y%10);
+            if (z > Integer.MAX_VALUE)return 0;
+            y=y/10;
+        }
+        if (isNegative){
+            z=0-z;
+        }
+        return (int)z;
+    }
+}
+```
+
+### 8. String to Integer (atoi)
+
+```
+Implement atoi to convert a string to an integer.
+
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.
+
+Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.
+```
+
+**解法一：**
 
 ```java
+public class String_to_Integer {
+    public static void  main(String args[]){
+        int i=new String_to_Integer().myAtoi("-2147483649");//2147483647
+        System.out.println(i);
+    }
+    public int myAtoi(String str) {
+       str=str.trim();
+        boolean isNeg=false;
+       if (str.startsWith("-")){
+           isNeg=true;
+           str=str.substring(1,str.length());
+       }else if (str.startsWith("+")){
+           str=str.substring(1,str.length());
+       }
+       long k=0;
+       for (int i=0;i<str.length();i++){
+           char ch=str.charAt(i);
+           if (ch>47 && ch< 58){
+               if (isNeg){
+                   k=k*10-getValue(ch);
+               }else {
+                   k=k*10+getValue(ch);
+               }
+               if (k>=Integer.MAX_VALUE){
+                   return Integer.MAX_VALUE;
+               }
+               if (k<=Integer.MIN_VALUE){
+                   return Integer.MIN_VALUE;
+               }
+           }else {
+               break;
+           }
+       }
+        return (int)k;
+    }
+    private int getValue(char ch){
+        switch (ch){
+            case 48:return 0;
+            case 49:return 1;
+            case 50:return 2;
+            case 51:return 3;
+            case 52:return 4;
+            case 53:return 5;
+            case 54:return 6;
+            case 55:return 7;
+            case 56:return 8;
+            case 57:return 9;
+            default:return -1;
+        }
+    }
+}
+```
+
+### 9. Palindrome Number
+
+```
+Determine whether an integer is a palindrome. Do this without extra space.
+```
+
+**解法一：**
+
+```java
+
 ```
