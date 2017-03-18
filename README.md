@@ -210,7 +210,7 @@
     5. [MessagePack: 基于二进制高效的对象序列化类库,跨语言,比JSON更快速也更轻巧](https://github.com/msgpack/msgpack)
     6. [thrift: 跨语言，不仅仅包括序列化，是一个远程服务调用框架，facebook开源](http://thrift.apache.org/)
     
-- #####其他
+- ##### 其他
     1. [spring-retry: 操作失败后，优雅自动重新尝试](https://github.com/spring-projects/spring-retry)
     2. [Flyway : 是一个敏捷工具，用于数据库的移植](https://flywaydb.org/)
     
