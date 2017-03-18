@@ -48,32 +48,16 @@
 
 # 博客和wiki收藏
 - [spring boot内存调优](http://spring.io/blog/2015/12/10/spring-boot-memory-performance)
-- [关键业务系统的JVM参数推荐](http://calvin1978.blogcn.com/articles/jvmoption-2.html?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-- [深入理解Java G1垃圾收集器](http://blog.jobbole.com/109170/?utm_source=tuicool&utm_medium=referral)
 - [关于前端性能优化，看懂这23条就够了！](https://zhuanlan.zhihu.com/p/23543612)
 - [spring核心框架体系结构](http://www.importnew.com/22859.html?utm_source=tuicool&utm_medium=referral)
-- [微服务Spring Cloud与Kubernetes比较](http://www.jdon.com/48605?utm_source=tuicool&utm_medium=referral)
-- [Java中的纤程库 - Quasar](http://colobu.com/2016/07/14/Java-Fiber-Quasar/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-- [继续了解Java的纤程库 - Quasar](http://colobu.com/2016/08/01/talk-about-quasar-again/)
-- [高性能队列——Disruptor](http://tech.meituan.com/disruptor.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [Mybatis源码解读-设计模式总结](http://www.crazyant.net/2022.html)
-- [Java动态绑定机制的内幕](https://zhuanlan.zhihu.com/p/24317613?utm_source=tuicool&utm_medium=referral)
-- [JVM垃圾收集器](http://www.javaranger.com/archives/636)
 - [透彻Linux(Unix)五种IO模型](http://mp.weixin.qq.com/s?__biz=MzIxMjAzMDA1MQ==&mid=2648945760&idx=1&sn=125c5e29e7e53e0e0c66d327fa09f828&chksm=8f5b536cb82cda7a6c7a4f57b4671439a558a2b695026090b5ef80899df1689981892e9c4724#rd)
-- [自己动手写JVM](http://bboyjing.github.io/categories/JVM/)
-- [JVM GC](http://www.blogjava.net/jinfeng_wang/archive/2016/12/14/432095.html?utm_source=tuicool&utm_medium=referral)
 - [JavaWeb项目为什么我们要放弃jsp？为什么要前后端解耦？为什么要动静分离？](http://blog.csdn.net/piantoutongyang/article/details/50878214?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [jps、jstack、jmap、jhat、jstat、hprof使用详解 ](http://josh-persistence.iteye.com/blog/2161848)
 - [Java压缩算法性能比较](http://codingo.xyz/index.php/2016/12/13/java_compress/)
 - [100个高质量Java开发者博客](http://www.importnew.com/7469.html)
 - [从源码角度认识ArrayList，LinkedList与HashMap](http://www.jianshu.com/p/f174d49b391c?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [HashMap 和 HashTable 源码学习和面试总结](http://www.cnblogs.com/kubixuesheng/p/6144535.html?utm_source=tuicool&utm_medium=referral)
-- [Java方法重载与重写（静态分派与动态分派）](http://www.mamicode.com/info-detail-564707.html)
-- [近5年133个Java面试问题列表](http://geek.csdn.net/news/detail/113566?utm_source=tuicool&utm_medium=referral)
-- [Java 进阶面试问题列表](https://zhuanlan.zhihu.com/p/24910702?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-- [gradle中文指导](https://dongchuan.gitbooks.io/gradle-user-guide-/)
-- [spring boot中文指导](https://www.gitbook.com/book/qbgbook/spring-boot-reference-guide-zh/details)
-- [disruptor学习](http://wiki.jikexueyuan.com/project/disruptor-getting-started/)
 
 ---
 
