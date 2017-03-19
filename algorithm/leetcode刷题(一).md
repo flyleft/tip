@@ -480,3 +480,62 @@ isMatch("aab", "c*a*b") → true
 ```
 
 **解法一：**
+```java
+public class Regular_Expression_Matching {
+    public static void main(String args[]){
+      Regular_Expression_Matching matching=new Regular_Expression_Matching();
+      //System.out.println(matching.isMatch("",""));
+      System.out.println("123".charAt(2));
+    }
+    public boolean isMatch(String s, String p) {
+        if (p.contains(".") || p.contains("*")) {
+            if (p.length() == 1 || p.charAt(1) != '*')
+                return comp(s, p, s.length(), 0) && isMatch(s.substring(1), p.substring(1));
+            for (int i = 0; i == 0 || comp(s, p, s.length(), i - 1); i++) {
+                if (isMatch(s.substring(i), p.substring(2)))  
+                    return true;
+            }
+        }
+        return s.equals(p);
+    }
+
+    private boolean comp(String s, String p, int sLen, int i) {
+        return sLen > i && (p.charAt(0) == s.charAt(i) || p.charAt(0) == '.');
+    }
+}
+```
+
+### 11. Container With Most Water
+
+```
+Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai).
+n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). 
+Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+
+题意：在二维坐标系中，(i, ai) 表示 从 (i, 0) 到 (i, ai) 的一条线段，
+任意两条这样的线段和 x 轴组成一个木桶，找出能够盛水最多的木桶，返回其容积。
+```
+
+**解法一：**
+```java
+public class Container_With_Most_Water {
+    public static void main(String args[]){
+        Container_With_Most_Water water=new Container_With_Most_Water();
+        System.out.println(water.maxArea(new int[]{2,4,6,3,7,1}));
+    }
+    public int maxArea(int[] height) {
+       int maxArea=0;
+       int low=0;
+       int len=height.length-1;
+       while (low<len){
+           maxArea=Math.max(maxArea,(len-low)*Math.min(height[low],height[len]));
+           if (height[low] < height[len]){
+               low++;
+           }else {
+               len--;
+           }
+       }
+        return maxArea;
+    }
+}
+```
