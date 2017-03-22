@@ -539,3 +539,48 @@ public class Container_With_Most_Water {
     }
 }
 ```
+
+### 12. Integer to Roman
+
+```
+Given an integer, convert it to a roman numeral.
+
+Input is guaranteed to be within the range from 1 to 3999.
+
+I = 1;
+V = 5;
+X = 10;
+L = 50;
+C = 100;
+D = 500;
+M = 1000;
+
+1~9: {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+10~90: {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+100~900: {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+1000~3000: {"M", "MM", "MMM"}.
+```
+
+**解法一：**
+```java
+public class Integer_to_Roman {
+    public static void main(String args[]){
+        System.out.println(new Integer_to_Roman().intToRoman(3999));
+    }
+    public String intToRoman(int num) {
+        String[][] romanArray = {
+                {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"},//0-9
+                {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"},//10-90
+                {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"},//100-900
+                {"", "M", "MM", "MMM"}//1000-3000
+        };
+        int digit=0;
+        String roman="";
+        while (num>0){
+           roman=romanArray[digit++][num%10]+roman;
+           num=num/10;
+        }
+        return roman;
+    }
+}
+```
