@@ -28,7 +28,7 @@
 
 # 设计模式
 - [面向对象七大设计原则](https://github.com/jcalaz/tip/blob/master/design_pattern/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99.md)
-- [责任链模式]()
+- [责任链模式](https://github.com/jcalaz/tip/blob/master/design_pattern/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F.md)
 - [组合模式-如何让孩子爱上设计模式 ——9.组合模式(Composite Pattern)](http://www.jianshu.com/p/4e9a951415d2?utm_source=tuicool&utm_medium=referral)
 - [组合模式-设计模式之组合模式（Composite 模式）](http://www.jianshu.com/p/685dd6299d96?utm_source=tuicool&utm_medium=referral)
 
