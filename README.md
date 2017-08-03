@@ -28,6 +28,9 @@
 
 # 设计模式
 - [面向对象七大设计原则](https://github.com/jcalaz/tip/blob/master/design_pattern/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99.md)
+- [责任链模式]()
+- [组合模式-如何让孩子爱上设计模式 ——9.组合模式(Composite Pattern)](http://www.jianshu.com/p/4e9a951415d2?utm_source=tuicool&utm_medium=referral)
+- [组合模式-设计模式之组合模式（Composite 模式）](http://www.jianshu.com/p/685dd6299d96?utm_source=tuicool&utm_medium=referral)
 
 ---
 
@@ -41,7 +44,7 @@
 - [面试题_web](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_web.md)
 - [面试题_框架](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_%E6%A1%86%E6%9E%B6.md)
 - [面试题_并发与多线程](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_%E5%B9%B6%E5%8F%91%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B.md)
-- [面试题_数据库](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_%E6%95%B0%E6%8D%AE%E5%BA%93.md) 
+- [面试题_数据库](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_%E6%95%B0%E6%8D%AE%E5%BA%93.md)
 - [面试题_JVM与内存](https://github.com/jcalaz/tip/blob/master/interview/%E9%9D%A2%E8%AF%95%E9%A2%98_JVM%E4%B8%8E%E5%86%85%E5%AD%98.md)
 
 ---
@@ -55,9 +58,7 @@
 - [JavaWeb项目为什么我们要放弃jsp？为什么要前后端解耦？为什么要动静分离？](http://blog.csdn.net/piantoutongyang/article/details/50878214?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 - [jps、jstack、jmap、jhat、jstat、hprof使用详解 ](http://josh-persistence.iteye.com/blog/2161848)
 - [Java压缩算法性能比较](http://codingo.xyz/index.php/2016/12/13/java_compress/)
-- [100个高质量Java开发者博客](http://www.importnew.com/7469.html)
-- [从源码角度认识ArrayList，LinkedList与HashMap](http://www.jianshu.com/p/f174d49b391c?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-- [HashMap 和 HashTable 源码学习和面试总结](http://www.cnblogs.com/kubixuesheng/p/6144535.html?utm_source=tuicool&utm_medium=referral)
+- [Spring Security 教程](https://github.com/waylau/spring-security-tutorial/)
 
 ---
 
