@@ -1,3 +1,6 @@
+
+[toc]
+
 # 自写博客或笔记
 - [java注解总结](https://github.com/jcalaz/tip/blob/master/blog/javase/java%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93.md)
 - [用JAVA二十分钟撸一个简易图片防篡改](https://github.com/jcalaz/tip/blob/master/blog/javase/%E7%94%A8JAVA%E4%BA%8C%E5%8D%81%E5%88%86%E9%92%9F%E6%92%B8%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E5%9B%BE%E7%89%87%E9%98%B2%E7%AF%A1%E6%94%B9.md)
