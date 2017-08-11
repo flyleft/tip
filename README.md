@@ -1,6 +1,3 @@
-
-[toc]
-
 # 自写博客或笔记
 - [java注解总结](https://github.com/jcalaz/tip/blob/master/blog/javase/java%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93.md)
 - [用JAVA二十分钟撸一个简易图片防篡改](https://github.com/jcalaz/tip/blob/master/blog/javase/%E7%94%A8JAVA%E4%BA%8C%E5%8D%81%E5%88%86%E9%92%9F%E6%92%B8%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E5%9B%BE%E7%89%87%E9%98%B2%E7%AF%A1%E6%94%B9.md)
@@ -192,6 +189,8 @@
 - ##### 热加载
     1. [JRebel: 收费，idea，eclipse，netbeans都有它的插件](https://zeroturnaround.com/software/jrebel/)
     2. [spring-loaded: spring开源热更新工具](https://github.com/spring-projects/spring-loaded)
+    3. [spring-boot-devtools: spring boot子模块，热更新工具](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-devtools)
+    3. [HotswapAgent : 免费开源热更新](https://github.com/HotswapProjects/HotswapAgent)
     
 - ##### 数据库连接池
     1. [HikariCP: 性能最高的数据库连接池](http://brettwooldridge.github.io/HikariCP/)
@@ -201,6 +200,7 @@
     1. [Mockito: 允许使用自动化的单元测试创建和测试双对象，以达到测试驱动开发和行为驱动开发的目的](http://site.mockito.org/)
     2. [JUnit: 最常使用的单元测试工具](http://junit.org/junit4/)
     3. [TestNG: 主要功能是覆盖范围更广的测试分类，如单元、功能性、端到端，一体化等](http://testng.org/doc/index.html)
+
 - ##### 开源博客
     1. [jcalaBlog: 基于spring boot的个人博客，本来写给自己用，写完后开源了，有时间重构](https://github.com/jcalaz/jcalaBlog)
     2. [Solo: 是一款一个命令就能搭建好的 Java 开源博客系统，并内置了 15+ 套精心制作的皮肤](https://github.com/b3log/solo)
