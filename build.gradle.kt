@@ -1,8 +1,16 @@
 group 'me.jcala.tip'
 version '1.0-SNAPSHOT'
 
+/*sourceSets {
+    main.java.srcDirs = []
+    main.kotlin.srcDirs = ['src/main/java', 'src/main/kotlin']
+    sourceSets.main.groovy.srcDirs = ["src/main/java", "src/main/groovy"]
+    main.resources.srcDirs = ['src/main/resources']
+}*/
+
 buildscript {
     ext {
+        kotlin_version = '1.1.3-2'
         springBootVersion = '2.0.0.M3'
         ehcacheVersion = '2.10.4'
     }
@@ -14,11 +22,13 @@ buildscript {
         }
     }
     dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
 apply plugin: 'java'
+apply plugin: 'kotlin'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
@@ -51,6 +61,7 @@ repositories {
 }
 
 dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     compile ("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     compile ("org.springframework.boot:spring-boot-starter-velocity:1.4.7.RELEASE")
     testCompile ("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
@@ -62,15 +73,18 @@ dependencies {
     compile ("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0")
     //--------------------JDK工具------------------------------
     compile ("org.projectlombok:lombok:1.16.18")
-    //---------------------缓存--------------------------------
+    //---------------------缓存-------------------------------
     compile ("net.sf.ehcache:ehcache:${ehcacheVersion}")
-    //---------------------日志--------------------------------
+    //---------------------日志-------------------------------
     compile ("org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}")
     compile ("com.lmax:disruptor:3.3.6")
-    //---------------------spring-boot-starter-actuator--------
+    //---------------------spring-boot-starter-actuator----------
     compile ("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
-    //--------------------restdocs-----------------------------
-    testCompile 'org.springframework.restdocs:spring-restdocs-mockmvc:1.2.1.RELEASE'
-    compile 'com.alibaba:fastjson:1.2.36'
+}
 
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
 }
