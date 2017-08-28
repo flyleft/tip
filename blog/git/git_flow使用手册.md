@@ -29,24 +29,29 @@
   git flow feature start user_register
   ```
   它会创建一个分支feature/user_register，并切换到该分支
+
   2. 开发完成
   ```
   git flow feature finish user_register
   ```
   将该分支合并到develop分支，然后切换回develop分支，并删除feature/user_register分支
+
   3. 删除弃用分支
   ```
   git flow feature delete user_register
   ```
+
   4. 合作开发-推送分支
   如果你想让别人和你一起开发user_register分支，那就把这个分支push到服务器上
   ```
   git flow feature publish user_register
   ```
+
   5. 合作开发-取得分支，签出远程更新
   ```
   git flow feature pull origin user_register
   ```
+
   6. 合作开发-追踪在origin上的特性分支
   ```
    git flow feature track user_register
@@ -58,24 +63,29 @@
  ```
  git flow release start 0.1.0
  ```
+
  2. 此时本分支进行测试等，测试完成发布
  ```
  git flow release finish 0.1.0
  ```
  会将release/0.1.0分支的内容合并到master和develop，并且打上tag 0.1.0，然后删除release/0.1.0分支
+
  3. 删除弃用分支
  ```
  git flow release delete 0.1.0
  ```
+
  4. 合作开发-推送分支
  如果你想让别人和你一起开发0.1.0分支，那就把这个分支push到服务器上
  ```
  git flow release publish 0.1.0
  ```
+
  5. 合作开发-取得分支，签出远程更新
  ```
  git flow release pull origin 0.1.0
  ```
+
  6. 合作开发-追踪在origin上的特性分支
  ```
  git flow release track 0.1.0
@@ -87,21 +97,25 @@
  ```
  git flow hotfix start 0.1.1
  ```
- 此时gitflow从master分支上拉出一个hotfix/0.1.1的分支，接下来在新分支上修改bug。
+ 此时gitflow从master分支上拉出一个hotfix/0.1.1的分支，接下来在新分支上修改bug
+
  2. 修复bug合并分支
  ```
  git flow hotfix finish 0.1.1
  ```
  这样hotfix/0.1.1被merge到master分支和develop分支，打好0.1.1这个tag，删除这个分支，切换回develop分支。
+
  3. 删除弃用分支
  ```
  git flow hotfix delete 0.1.1
  ```
+
  4. 合作开发-推送分支
  如果你想让别人和你一起开发0.1.1分支，那就把这个分支push到服务器上
  ```
  git flow hotfix publish 0.1.1
  ```
+
  5. 合作开发-取得分支，签出远程更新
  ```
   git flow hotfix pull origin 0.1.1
