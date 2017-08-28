@@ -23,7 +23,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(ConverterController.class)
 @AutoConfigureRestDocs
 public class TestConverterController {
-
+    Person person=new Person(1,"xiaozhang",23);
+    Cat cat=new Cat(1,"xiao","bosi");
     @Autowired
     private MockMvc mvc;
 
@@ -35,8 +36,7 @@ public class TestConverterController {
                 post("/persons")
                         .header("access_token", "2312")
                         .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(objectMapper.writeValueAsString(
-                        Person.builder().name("per").age(23).id(1).build())))
+                .content(objectMapper.writeValueAsString(person)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value(1))
                 .andDo(document("list-persons",
@@ -49,14 +49,13 @@ public class TestConverterController {
 
     @Test
     public void testMultipleRequestBody() throws Exception {
+
         String result=this.mvc.perform(
                 post("/persons/ceshi")
                         .header("access_token", "2312")
                         .contentType(MediaType.APPLICATION_JSON_UTF8)
-                        .content(objectMapper.writeValueAsString(
-                                Person.builder().name("per").age(23).id(1).build())
-                        +objectMapper.writeValueAsString(
-                                Cat.builder().id(1).name("sd").type("bosi").build())
+                        .content(objectMapper.writeValueAsString(person)
+                        +objectMapper.writeValueAsString(cat)
                         )
                       )
                 .andExpect(status().isOk())
@@ -71,8 +70,8 @@ public class TestConverterController {
 
     @Test
     public void  getJson() throws Exception{
-        String data=objectMapper.writeValueAsString(Person.builder().name("per").age(23).id(1).build())
-                +objectMapper.writeValueAsString(Cat.builder().id(1).name("sd").type("bosi").build());
+        String data=objectMapper.writeValueAsString(person)
+                +objectMapper.writeValueAsString(cat);
 
         System.out.println(data);
 
