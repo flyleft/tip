@@ -19,8 +19,9 @@
 
 ### 根据默认初始化项目
   ```
-  git flow init -d  #git flow会创建master和develop分支，默认所在develop分支。
+  git flow init -d
   ```
+  git flow会创建master和develop分支，默认所在develop分支。
 
 ### 开发新的功能，例如用户注册
   1. 开发新功能
