@@ -12,6 +12,7 @@
 - [线程中的join方法](https://github.com/jcalaz/tip/blob/master/blog/javase/%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84join%E6%96%B9%E6%B3%95.md)
 - [理解ThreadLocal](https://github.com/jcalaz/tip/blob/master/blog/javase/%E7%90%86%E8%A7%A3ThreadLocal.md)
 - [java类加载机制](https://github.com/jcalaz/tip/blob/master/blog/javase/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6.md)
+- [git flow的使用](https://github.com/jcalaz/tip/blob/master/blog/git/git_flow%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)
 
 ---
 
