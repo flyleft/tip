@@ -75,18 +75,12 @@
  git flow release delete 0.1.0
  ```
 
- 4. 合作开发-推送分支
- 如果你想让别人和你一起开发0.1.0分支，那就把这个分支push到服务器上
+ 4. 推送分支
  ```
  git flow release publish 0.1.0
  ```
 
- 5. 合作开发-取得分支，签出远程更新
- ```
- git flow release pull origin 0.1.0
- ```
-
- 6. 合作开发-追踪在origin上的特性分支
+ 5. 追踪在origin上的特性分支
  ```
  git flow release track 0.1.0
  ```
@@ -110,13 +104,7 @@
  git flow hotfix delete 0.1.1
  ```
 
- 4. 合作开发-推送分支
- 如果你想让别人和你一起开发0.1.1分支，那就把这个分支push到服务器上
+ 4. 推送分支
  ```
  git flow hotfix publish 0.1.1
- ```
-
- 5. 合作开发-取得分支，签出远程更新
- ```
-  git flow hotfix pull origin 0.1.1
  ```
