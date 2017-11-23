@@ -13,7 +13,7 @@
 - [理解ThreadLocal](https://github.com/jcalaz/tip/blob/master/blog/javase/%E7%90%86%E8%A7%A3ThreadLocal.md)
 - [java类加载机制](https://github.com/jcalaz/tip/blob/master/blog/javase/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6.md)
 - [git flow的使用](https://github.com/jcalaz/tip/blob/master/blog/git/git_flow%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)
-- [java中使用pact做契约测试]()
+- [java中使用pact做契约测试](https://github.com/jcalaz/tip/blob/master/blog/cloud/java%E4%B8%AD%E4%BD%BF%E7%94%A8pact%E5%81%9A%E5%A5%91%E7%BA%A6%E6%B5%8B%E8%AF%95.md)
 ---
 
 # 数据结构
