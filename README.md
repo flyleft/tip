@@ -166,7 +166,7 @@
   4. [kotlin: jetbrains开发，目前多用于安卓开发，简化版的scala](http://kotlinlang.org/)
   5. [lux: 正在开发中的静态lisp方言](https://github.com/LuxLang/lux)
   
-#### 工具包
+- #### 工具包
   1. [strman-java: 一个字符串处理工具,使用它可以解决几乎所有字符串处理场景](https://github.com/shekhargulati/strman-java)
   2. [jgit: java实现git操作](http://www.eclipse.org/jgit/)
   3. [Guava: Google开源，包含许多Google核心的Java常用库](https://github.com/google/guava)
@@ -175,7 +175,7 @@
   6. [Chronicle Map: 基于内存的键值对存储,低延迟、高并发,支持持久化到磁盘，以及多键值查询](https://github.com/OpenHFT/Chronicle-Map)
   7. [reflections: 一个java反射工具包](https://github.com/ronmamo/reflections)
   
-#### 学习
+- #### 学习
   1. [99-Problems: 对三种不同的语言Java 8,Scala和Haskell分别提出了99个问题，让你通过使用特定语言编程来提供一个最优的解决方案](https://github.com/shekhargulati/99-problems/tree/master/java8)
   2. [java-design-patterns: java设计模式学习](https://github.com/iluwatar/java-design-patterns)
   
