@@ -3,6 +3,7 @@
 - [自制编程语言之用scala写一个简单分词器](https://github.com/jcalaz/tip/blob/master/blog/scala/%E8%87%AA%E5%88%B6%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%94%A8scala%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E5%88%86%E8%AF%8D%E5%99%A8.md)
 - [git flow的使用](https://github.com/jcalaz/tip/blob/master/blog/git/git_flow%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)
 - [java中使用pact做契约测试](https://github.com/jcalaz/tip/blob/master/blog/cloud/java%E4%B8%AD%E4%BD%BF%E7%94%A8pact%E5%81%9A%E5%A5%91%E7%BA%A6%E6%B5%8B%E8%AF%95.md)
+-  [本机kafka集群搭建]()
 ---
 
 
