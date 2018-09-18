@@ -52,10 +52,10 @@
 # 开源项目收集
     
 - #### 容器与devops
-   1. [Knative](https://github.com/knative)- : 用于构建、部署和管理Serverless工作负载的Kubernetes框架\.
-   2. [TAC](https://github.com/alibaba/tac)- : 基于java的微服务容器，提供从业务代码编写、编译、发布、jar动态加载、运行等一系列常用开发流程的支持
-   3. [Supervisor](http://www.supervisord.org)- : 进程管理工具，是通过fork/exec的方式将这些被管理的进程当作supervisor的子进程来启动。
-   4. [gVisor](https://github.com/google/gvisor)- : Google开源的轻量级的Sandbox，额外的内存消耗非常小，但同时提供了和VM方案相当隔离等级。
+   1. [Knative：用于构建、部署和管理Serverless工作负载的Kubernetes框架](https://github.com/knative)
+   2. [TAC：基于java的微服务容器，提供从业务代码编写、编译、发布、jar动态加载、运行等一系列常用开发流程的支持](https://github.com/alibaba/tac)
+   3. [Supervisor：进程管理工具，是通过fork/exec的方式将这些被管理的进程当作supervisor的子进程来启动。](http://www.supervisord.org)
+   4. [gVisor：Google开源的轻量级的Sandbox，额外的内存消耗非常小，但同时提供了和VM方案相当隔离等级。](https://github.com/google/gvisor)
    5. [Pouch：阿里巴巴开源的自研容器技术](https://github.com/alibaba/pouchs)
    6. [container-diff: Google 开源 Docker 镜像差异分析工具](https://github.com/GoogleCloudPlatform/container-diff)
    7. [Kubernetes： 谷歌开源用于自动化部署，扩展和管理集装箱化应用程序的系统](https://kubernetes.io/)
