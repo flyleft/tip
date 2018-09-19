@@ -11,41 +11,45 @@
 ---
 
 # 博客收藏
-####  分布式事务
-- [分布式理论(一) - CAP定理](https://juejin.im/post/5b26634b6fb9a00e765e75d1?utm_source=tuicool&utm_medium=referral)
-- [分布式理论(二) - BASE理论](https://juejin.im/post/5b2663fcf265da59a401e6f8)
-- [分布式理论(三) - 2PC协议](https://juejin.im/post/5b2664446fb9a00e4a53136e)
-- [分布式理论(四) - 3PC协议](https://juejin.im/post/5b26648e5188257494641b9f)
-- [分布式理论(五) - 一致性算法Paxos](https://juejin.im/post/5b2664bd51882574874d8a76)
-- [分布式理论(六) - 一致性协议Raft](https://juejin.im/post/5b2664e2f265da59584d8c90)
-- [聊聊分布式存储——图解Paxos](https://www.jianshu.com/p/002a357d5993?utm_source=tuicool&utm_medium=referral)
-- [Raft动画讲解](http://thesecretlivesofdata.com/raft/)
-- [GTS:微服务架构下分布式事务解决方案](https://zhuanlan.zhihu.com/p/37492435?utm_source=tuicool&utm_medium=referral)
+- ####  分布式事务
+    1. [分布式理论(一) - CAP定理](https://juejin.im/post/5b26634b6fb9a00e765e75d1?utm_source=tuicool&utm_medium=referral)
+    2. [分布式理论(二) - BASE理论](https://juejin.im/post/5b2663fcf265da59a401e6f8)
+    3. [分布式理论(三) - 2PC协议](https://juejin.im/post/5b2664446fb9a00e4a53136e)
+    4. [分布式理论(四) - 3PC协议](https://juejin.im/post/5b26648e5188257494641b9f)
+    5. [分布式理论(五) - 一致性算法Paxos](https://juejin.im/post/5b2664bd51882574874d8a76)
+    6. [分布式理论(六) - 一致性协议Raft](https://juejin.im/post/5b2664e2f265da59584d8c90)
+    7. [聊聊分布式存储——图解Paxos](https://www.jianshu.com/p/002a357d5993?utm_source=tuicool&utm_medium=referral)
+    8. [Raft动画讲解](http://thesecretlivesofdata.com/raft/)
+    9. [GTS:微服务架构下分布式事务解决方案](https://zhuanlan.zhihu.com/p/37492435?utm_source=tuicool&utm_medium=referral)
 
-#### 存储
-- [美团针对 Redis Rehash 机制的探索和实践](http://www.cnblogs.com/meituantech/p/9376472.html)
+- #### 深度学习
+  1. [如何基于深度学习实现图像的智能审核?](http://www.cnblogs.com/meituantech/p/9321936.html)
 
-#### 深度学习
-- [如何基于深度学习实现图像的智能审核?](http://www.cnblogs.com/meituantech/p/9321936.html)
+- #### java库
+  1. [一篇的比较全面的 RxJava2 方法总结](https://juejin.im/post/5b72f76551882561354462dd)
+  2. [RxJava2：背压和Flowable](https://juejin.im/post/5b759b9cf265da283719d187)
+  3. [RxJava2：使用 Subject](https://juejin.im/post/5b801dfa51882542cb409905)
 
-#### java库
-- [一篇的比较全面的 RxJava2 方法总结](https://juejin.im/post/5b72f76551882561354462dd)
+- #### 协议
+  1. [HTTP缓存机制](https://juejin.im/post/5a1d4e546fb9a0450f21af23)
 
-#### 协议
-- [HTTP缓存机制](https://juejin.im/post/5a1d4e546fb9a0450f21af23)
+- #### DevOps
+  1. [不完美的 K8S 与阿里的解决之道](https://mp.weixin.qq.com/s?__biz=MzU1OTAzNzc5MQ==&mid=2247486063&idx=1&sn=f97a361a9718f98f2ffa5fe6f3234070&chksm=fc1c265fcb6baf497b4d8a4733cd333577afba29aa8641ceb1d75465a8a8c43ee6d281dfca74&scene=21#wechat_redirect)
 
-#### devops
-- [不完美的 K8S 与阿里的解决之道](https://mp.weixin.qq.com/s?__biz=MzU1OTAzNzc5MQ==&mid=2247486063&idx=1&sn=f97a361a9718f98f2ffa5fe6f3234070&chksm=fc1c265fcb6baf497b4d8a4733cd333577afba29aa8641ceb1d75465a8a8c43ee6d281dfca74&scene=21#wechat_redirect)
+- #### 数据库
+  1. [数据库两大神器【索引和锁】](https://juejin.im/post/5b55b842f265da0f9e589e79)
+  2. [Redis高可用技术解决方案总结](http://dbaplus.cn/news-158-2182-1.html?utm_source=tuicool&utm_medium=referral)
+  3. [4种事务的隔离级别，InnoDB如何巧妙实现？](https://mp.weixin.qq.com/s/x_7E2R2i27Ci5O7kLQF0UA?utm_source=tuicool&utm_medium=referral)
+  4. [InnoDB，select为啥会阻塞insert？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961471&idx=1&sn=da257b4f77ac464d5119b915b409ba9c&chksm=bd2d0da38a5a84b5fc1417667fe123f2fbd2d7610b89ace8e97e3b9f28b794ad147c1290ceea&scene=21#wechat_redirect)
+  5. [InnoDB并发如此高，原因竟然在这？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961444&idx=1&sn=830a93eb74ca484cbcedb06e485f611e&chksm=bd2d0db88a5a84ae5865cd05f8c7899153d16ec7e7976f06033f4fbfbecc2fdee6e8b89bb17b&scene=21#wechat_redirect)
+  6. [美团针对 Redis Rehash 机制的探索和实践](http://www.cnblogs.com/meituantech/p/9376472.html)
 
-#### 数据库
-- [数据库两大神器【索引和锁】](https://juejin.im/post/5b55b842f265da0f9e589e79)
-- [Redis高可用技术解决方案总结](http://dbaplus.cn/news-158-2182-1.html?utm_source=tuicool&utm_medium=referral)
 
-#### 架构
-- [日访问百亿级，如何架构并优化日志系统？](https://studygolang.com/articles/14273?utm_source=tuicool&utm_medium=referral)
+- #### 架构
+  1. [日访问百亿级，如何架构并优化日志系统？](https://studygolang.com/articles/14273?utm_source=tuicool&utm_medium=referral)
 
-#### JVM
-- [亿级网关 janus 性能优化与 JVM 调优实践](https://mp.weixin.qq.com/s/dbgLn55Ki9pfdEerbu7awg?utm_source=tuicool&utm_medium=referral)
+- #### JVM
+  1. [亿级网关 janus 性能优化与 JVM 调优实践](https://mp.weixin.qq.com/s/dbgLn55Ki9pfdEerbu7awg?utm_source=tuicool&utm_medium=referral)
 
 ---
 
@@ -61,7 +65,7 @@
    7. [Kubernetes： 谷歌开源用于自动化部署，扩展和管理集装箱化应用程序的系统](https://kubernetes.io/)
 
 - #### 性能调优工具
-   1. [Profiler: 是一个阿里开源可以在生产环境长期使用的JVM性能分析工具](https://github.com/alibaba/TProfiler)
+   1. [TProfiler: 是一个阿里开源可以在生产环境长期使用的JVM性能分析工具](https://github.com/alibaba/TProfiler)
    2. [pprof: 一个开源goLang的性能分析工具](https://github.com/google/pprof)
 
 - #### 服务发现
