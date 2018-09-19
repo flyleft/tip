@@ -3,9 +3,7 @@
 - [自制编程语言之用scala写一个简单分词器](blog/自制编程语言之用scala写一个简单分词器.md)
 - [git flow的使用](blog/git_flow使用手册.md)
 - [java中使用pact做契约测试](blog/java中使用pact做契约测试.md)
-- [本机kafka集群搭建](blog/本机kafka集群搭建.md)
 - [zuul性能调优-使用okhttp替代httpclient](blog/zuul性能调优-okhttp替代httpclient.md)
-- [springboot性能调优](blog/springboot性能调优.md)
 - [使用spock编写spring-boot项目的单元测试](blog/使用spock编写spring-boot项目的单元测试.md)
 
 ---
@@ -32,6 +30,7 @@
 
 - #### 协议
   1. [HTTP缓存机制](https://juejin.im/post/5a1d4e546fb9a0450f21af23)
+  2. [完全吃透 TLS/SSL](https://juejin.im/post/5b305758e51d4558ce5ea0d9?utm_source=tuicool&utm_medium=referral)
 
 - #### DevOps
   1. [不完美的 K8S 与阿里的解决之道](https://mp.weixin.qq.com/s?__biz=MzU1OTAzNzc5MQ==&mid=2247486063&idx=1&sn=f97a361a9718f98f2ffa5fe6f3234070&chksm=fc1c265fcb6baf497b4d8a4733cd333577afba29aa8641ceb1d75465a8a8c43ee6d281dfca74&scene=21#wechat_redirect)
@@ -83,6 +82,11 @@
   6. [Thrift: facebook开源，支持多种语言](http://thrift.apache.org/)
   7. [grpc: 谷歌开源，支持跨语言](http://www.grpc.io/)
   8. [Istio: Google/IBM/Lyft共同开发的新一代Service Mesh开源项目](https://istio.io/)
+  
+- ##### 权限引擎
+  1. [Apache Shiro:是一个强大且易用的Java安全框架,执行身份验证、授权、密码学和会话管理](http://shiro.apache.org/get-started.html)
+  2. [Spring Security:是一个能够为基于Spring的企业应用系统提供声明式的安全访问控制解决方案的安全框架](http://projects.spring.io/spring-security/)
+  3. [casbin: 一个goLang开源访问控制框架，支持ACL, RBAC, ABAC等](https://github.com/casbin/casbin)
   
 - #### 模板引擎
    1. [freemarker: 老牌模板引擎，没用过](http://freemarker.org/docs/)
