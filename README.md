@@ -42,6 +42,8 @@
   4. [InnoDB，select为啥会阻塞insert？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961471&idx=1&sn=da257b4f77ac464d5119b915b409ba9c&chksm=bd2d0da38a5a84b5fc1417667fe123f2fbd2d7610b89ace8e97e3b9f28b794ad147c1290ceea&scene=21#wechat_redirect)
   5. [InnoDB并发如此高，原因竟然在这？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961444&idx=1&sn=830a93eb74ca484cbcedb06e485f611e&chksm=bd2d0db88a5a84ae5865cd05f8c7899153d16ec7e7976f06033f4fbfbecc2fdee6e8b89bb17b&scene=21#wechat_redirect)
   6. [美团针对 Redis Rehash 机制的探索和实践](http://www.cnblogs.com/meituantech/p/9376472.html)
+  7. [Redis的KEYS命令引起RDS数据库雪崩，RDS发生两次宕机，造成几百万的资金损失](https://mp.weixin.qq.com/s/SGOyGGfA6GOzxwD5S91hLw)
+  8. [美图分布式Bitmap实践：Naix](https://juejin.im/post/5ba30de85188255c5442a34a)
 
 
 - #### 架构
@@ -73,6 +75,11 @@
    3. [Consul: HashiCorp公司推出的开源工具，用于实现分布式系统的服务发现与配置, 使用Raft算法。](https://github.com/hashicorp/consul)
    4. [Eureka: Netflix开源的，java开发，基于restful。](https://github.com/Netflix/eureka)
 
+- #### service mesh
+   1. [Istio: Google/IBM/Lyft共同开发的新一代Service Mesh开源项目, 运行在k8s上](https://istio.io/)
+   1. [sofa-mesh: 蚂蚁金服基于 Istio 改进和扩展而来的 Service Mesh 大规模落地实践方案](https://github.com/alipay/sofa-mesh)
+   1. [sofa-mosn: 蚂蚁金服基于 Golang 开发的Service Mesh数据平面代理, MOSN支持Envoy和Istio的API，可以和Istio集成](https://github.com/alipay/sofa-mosn)
+   
 - #### 分布式框架
   1. [Spring Cloud: 分布式一站式解决，将各家公司开发的比较成熟、经得起实际考验的服务框架组合起来](http://projects.spring.io/spring-cloud/)
   2. [dubbo: 是一个分布式服务框架，致力于提供高性能和透明化的RPC远程服务调用方案，是阿里巴巴SOA服务化治理方案的核心框架](http://dubbo.io/)
@@ -82,6 +89,7 @@
   6. [Thrift: facebook开源，支持多种语言](http://thrift.apache.org/)
   7. [grpc: 谷歌开源，支持跨语言](http://www.grpc.io/)
   8. [Istio: Google/IBM/Lyft共同开发的新一代Service Mesh开源项目](https://istio.io/)
+  9. [SOFARPC: 蚂蚁金服一个高可扩展性、高性能、生产级的 Java RPC 框架, 提供了丰富的模型抽象和可扩展接口。](https://github.com/alipay/sofa-rpc.git)
   
 - ##### 权限引擎
   1. [Apache Shiro:是一个强大且易用的Java安全框架,执行身份验证、授权、密码学和会话管理](http://shiro.apache.org/get-started.html)
