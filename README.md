@@ -19,6 +19,7 @@
     7. [聊聊分布式存储——图解Paxos](https://www.jianshu.com/p/002a357d5993?utm_source=tuicool&utm_medium=referral)
     8. [Raft动画讲解](http://thesecretlivesofdata.com/raft/)
     9. [GTS:微服务架构下分布式事务解决方案](https://zhuanlan.zhihu.com/p/37492435?utm_source=tuicool&utm_medium=referral)
+    10.[Gossip协议在Cassandra中的实现](https://juejin.im/entry/59900b585188257d86431847)
 
 - #### 深度学习
   1. [如何基于深度学习实现图像的智能审核?](http://www.cnblogs.com/meituantech/p/9321936.html)
