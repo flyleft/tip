@@ -20,6 +20,7 @@
     8. [Raft动画讲解](http://thesecretlivesofdata.com/raft/)
     9. [GTS:微服务架构下分布式事务解决方案](https://zhuanlan.zhihu.com/p/37492435?utm_source=tuicool&utm_medium=referral)
     10.[Gossip协议在Cassandra中的实现](https://juejin.im/entry/59900b585188257d86431847)
+    11. [servicecomb-saga设计文档，基于saga的数据一致性实现](https://github.com/apache/incubator-servicecomb-saga/blob/master/docs/design_zh.md)
 
 - #### 深度学习
   1. [如何基于深度学习实现图像的智能审核?](http://www.cnblogs.com/meituantech/p/9321936.html)
@@ -43,8 +44,9 @@
   4. [InnoDB，select为啥会阻塞insert？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961471&idx=1&sn=da257b4f77ac464d5119b915b409ba9c&chksm=bd2d0da38a5a84b5fc1417667fe123f2fbd2d7610b89ace8e97e3b9f28b794ad147c1290ceea&scene=21#wechat_redirect)
   5. [InnoDB并发如此高，原因竟然在这？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961444&idx=1&sn=830a93eb74ca484cbcedb06e485f611e&chksm=bd2d0db88a5a84ae5865cd05f8c7899153d16ec7e7976f06033f4fbfbecc2fdee6e8b89bb17b&scene=21#wechat_redirect)
   6. [美团针对 Redis Rehash 机制的探索和实践](http://www.cnblogs.com/meituantech/p/9376472.html)
-  7. [Redis的KEYS命令引起RDS数据库雪崩，RDS发生两次宕机，造成几百万的资金损失](https://mp.weixin.qq.com/s/SGOyGGfA6GOzxwD5S91hLw)
-  8. [美图分布式Bitmap实践：Naix](https://juejin.im/post/5ba30de85188255c5442a34a)
+  7. [美图分布式Bitmap实践：Naix](https://juejin.im/post/5ba30de85188255c5442a34a)
+  8. [kafka的exactly once支持](https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/)
+   
 
 
 - #### 架构
