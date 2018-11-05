@@ -11,7 +11,7 @@
  - 通过setBody修改方法体，分别添加me.flyleft.eureka.client.event.EurekaEventHandler.getInstance().eurekaAddInstance($1);和me.flyleft.eureka.client.event.EurekaEventHandler.getInstance().eurekaRemoveInstance($1);
  - 通过toClass覆盖原有类后，通过类加载器重新加载。
  
-```
+```java
 public void init() {
         try {
             ClassPool classPool = new ClassPool(true);
