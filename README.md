@@ -69,6 +69,14 @@
    6. [container-diff: Google 开源 Docker 镜像差异分析工具](https://github.com/GoogleCloudPlatform/container-diff)
    7. [Kubernetes： 谷歌开源用于自动化部署，扩展和管理集装箱化应用程序的系统](https://kubernetes.io/)
 
+- #### goLang
+  1. [awesome-go: go开源项目收集](https://github.com/avelino/awesome-go)
+  2. [cobra: CLI命令行库，也可用于生成程序应用和命令行文件](https://github.com/spf13/cobra)
+  3. [machinery: Golang的分布式任务队列](https://github.com/RichardKnop/machinery)
+  4. [iris: 支持http2,websocket,MVC的高性能框架](https://github.com/kataras/iris)
+  5. [go-kit: Golang微服务开发工具集](https://github.com/go-kit/kit)
+  6. [protoactor-go: Golang的Actor模型并发库](https://github.com/AsynkronIT/protoactor-go)
+  
 - #### 性能调优工具
    1. [TProfiler: 是一个阿里开源可以在生产环境长期使用的JVM性能分析工具](https://github.com/alibaba/TProfiler)
    2. [pprof: 一个开源goLang的性能分析工具](https://github.com/google/pprof)
