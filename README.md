@@ -1,4 +1,6 @@
 # 自写博客或笔记
+- [go、java对比]()
+- [go使用struct tag实现类似于spring boot的yaml配置文件，源码：](https://github.com/flyleft/gprofile)
 - [使用javassist修改字节码实现eureka-client监听服务启动](https://github.com/flyleft/tip/blob/master/blog/使用javassist修改字节码实现eureka-client监听服务启动.md)
 - [用JAVA二十分钟撸一个简易图片防篡改](blog/javase/用JAVA二十分钟撸一个简易图片防篡改.md)
 - [自制编程语言之用scala写一个简单分词器](blog/自制编程语言之用scala写一个简单分词器.md)
