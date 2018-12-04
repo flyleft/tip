@@ -1,4 +1,5 @@
 # 自写博客或笔记
+- [数据一致性(一) - 接口调用一致性]()
 - [go、java对比](https://github.com/flyleft/tip/blob/master/blog/go、java对比.md)
 - [go使用struct tag实现类似于spring boot的yaml配置文件，源码：](https://github.com/flyleft/gprofile)
 - [使用javassist修改字节码实现eureka-client监听服务启动](https://github.com/flyleft/tip/blob/master/blog/使用javassist修改字节码实现eureka-client监听服务启动.md)
