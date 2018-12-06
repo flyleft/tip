@@ -1,5 +1,5 @@
 # 自写博客或笔记
-- [并发优化 - 降低锁颗粒]()
+- [并发优化 - 降低锁颗粒](https://github.com/flyleft/tip/blob/master/blog/并发优化%20-%20降低锁颗粒.md)
 - [数据一致性(一) - 接口调用一致性](https://github.com/flyleft/tip/blob/master/blog/数据一致性(一)%20-%20接口调用一致性.md)
 - [go、java对比](https://github.com/flyleft/tip/blob/master/blog/go、java对比.md)
 - [go使用struct tag实现类似于spring boot的yaml配置文件，源码：](https://github.com/flyleft/gprofile)
