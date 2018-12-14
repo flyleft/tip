@@ -41,7 +41,11 @@
 
 ---
 
-# 开源项目收集
+# 开源
+- #### 并发
+  - 线程安全set：ConcurrentSkipListSet、CopyOnWriteArraySet、ConcurrentHashMap.newKeySet()、Collections.synchronizedSet(set)
+   
+   
 - #### 算法和协议
    1.  [Redlock算法: 使用Redis实现分布式锁的算法](https://github.com/redisson/redisson/wiki/8.-Distributed-locks-and-synchronizers)
        
@@ -61,6 +65,7 @@
   4. [iris: 支持http2,websocket,MVC的高性能框架](https://github.com/kataras/iris)
   5. [go-kit: Golang微服务开发工具集](https://github.com/go-kit/kit)
   6. [protoactor-go: Golang的Actor模型并发库](https://github.com/AsynkronIT/protoactor-go)
+  7. [uber-go/dig: go依赖注入](https://github.com/uber-go/dig.git)
   
 - #### 性能调优工具
    1. [TProfiler: 是一个阿里开源可以在生产环境长期使用的JVM性能分析工具](https://github.com/alibaba/TProfiler)
