@@ -1,5 +1,4 @@
 # 自写博客或笔记
-- [分布式锁 - 基于数据库]()
 - [并发优化 - 降低锁颗粒](https://github.com/flyleft/tip/blob/master/blog/并发优化%20-%20降低锁颗粒.md)
 - [数据一致性(一) - 接口调用一致性](https://github.com/flyleft/tip/blob/master/blog/数据一致性(一)%20-%20接口调用一致性.md)
 - [go、java对比](https://github.com/flyleft/tip/blob/master/blog/go、java对比.md)
@@ -11,11 +10,14 @@
 - [java中使用pact做契约测试](blog/java中使用pact做契约测试.md)
 - [zuul性能调优-使用okhttp替代httpclient](blog/zuul性能调优-okhttp替代httpclient.md)
 - [使用spock编写spring-boot项目的单元测试](blog/使用spock编写spring-boot项目的单元测试.md)
+- [java中JNI的使用]()
 
 ---
 
 # 博客收藏
+- [Linux下的I/O复用与epoll详解](https://www.cnblogs.com/lojunren/p/3856290.html)
 - [数据库事务隔离级别](https://juejin.im/post/5b90cbf4e51d450e84776d27?utm_source=tuicool&utm_medium=referral)
+- [微服务注册中心 Eureka 架构深入解读](https://www.infoq.cn/article/jlDJQ*3wtN2PcqTDyokh?utm_source=tuicool&utm_medium=referral)
 - [分布式Bitmap实践：Naix](https://juejin.im/post/5ba30de85188255c5442a34a)
 - [InnoDB并发如此高，原因竟然在这？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651961444&idx=1&sn=830a93eb74ca484cbcedb06e485f611e&chksm=bd2d0db88a5a84ae5865cd05f8c7899153d16ec7e7976f06033f4fbfbecc2fdee6e8b89bb17b&scene=21#wechat_redirect)
 - [Redis高可用技术解决方案总结](http://dbaplus.cn/news-158-2182-1.html?utm_source=tuicool&utm_medium=referral)
@@ -48,6 +50,10 @@
    
 - #### 算法和协议
    1.  [Redlock算法: 使用Redis实现分布式锁的算法](https://github.com/redisson/redisson/wiki/8.-Distributed-locks-and-synchronizers)
+   2. [Snowflake: Twitter的分布式自增ID算法](https://github.com/twitter-archive/snowflake/releases/tag/snowflake-2010)
+ 
+- #### 数据一致性
+   1. [fescar: 阿里开源分布式事务解决方案](https://github.com/alibaba/fescar)
        
 - #### 容器与devops
    1. [Knative：用于构建、部署和管理Serverless工作负载的Kubernetes框架](https://github.com/knative)
@@ -59,13 +65,17 @@
    7. [Kubernetes： 谷歌开源用于自动化部署，扩展和管理集装箱化应用程序的系统](https://kubernetes.io/)
 
 - #### goLang
-  1. [awesome-go: go开源项目收集](https://github.com/avelino/awesome-go)
+  1. [awesome-go: go的开源项目收集](https://github.com/avelino/awesome-go)
   2. [cobra: CLI命令行库，也可用于生成程序应用和命令行文件](https://github.com/spf13/cobra)
-  3. [machinery: Golang的分布式任务队列](https://github.com/RichardKnop/machinery)
+  3. [machinery: go的分布式任务队列](https://github.com/RichardKnop/machinery)
   4. [iris: 支持http2,websocket,MVC的高性能框架](https://github.com/kataras/iris)
-  5. [go-kit: Golang微服务开发工具集](https://github.com/go-kit/kit)
-  6. [protoactor-go: Golang的Actor模型并发库](https://github.com/AsynkronIT/protoactor-go)
+  5. [go-kit: go微服务开发工具集](https://github.com/go-kit/kit)
+  6. [protoactor-go:go的Actor模型并发库](https://github.com/AsynkronIT/protoactor-go)
   7. [uber-go/dig: go依赖注入](https://github.com/uber-go/dig.git)
+  8. [pkg/errors: go异常处理库](https://github.com/pkg/errors.git)
+  9. [Dragonboat: 高性能raft库](https://github.com/lni/dragonboat)
+  10. [revive: go的代码质量检测工具](https://github.com/mgechev/revive)
+  11. [gotests: 快速生成单元测试的命令行工具](https://github.com/cweill/gotests)
   
 - #### 性能调优工具
    1. [TProfiler: 是一个阿里开源可以在生产环境长期使用的JVM性能分析工具](https://github.com/alibaba/TProfiler)
