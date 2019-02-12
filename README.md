@@ -10,7 +10,7 @@
 - [java中使用pact做契约测试](blog/java中使用pact做契约测试.md)
 - [zuul性能调优-使用okhttp替代httpclient](blog/zuul性能调优-okhttp替代httpclient.md)
 - [使用spock编写spring-boot项目的单元测试](blog/使用spock编写spring-boot项目的单元测试.md)
-- [java中JNI的使用]()
+- [java中JNI的使用](https://github.com/flyleft/tip/blob/master/blog/java中JNI的使用.md)
 
 ---
 
