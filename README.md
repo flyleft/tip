@@ -45,8 +45,12 @@
 
 # 开源
 - #### 并发
-  - 线程安全set：ConcurrentSkipListSet、CopyOnWriteArraySet、ConcurrentHashMap.newKeySet()、Collections.synchronizedSet(set)
+  - *线程安全set*：`ConcurrentSkipListSet`、`CopyOnWriteArraySet`、`ConcurrentHashMap.newKeySet()`、`Collections.synchronizedSet(set)`
    
+- 分布式技术
+  - *缓存穿透*: 请求去查询缓存数据库中根本就不存在的数据。解决方案: `缓存空值`、`BloomFilter`
+  - *缓存雪崩*: 缓存层不能提供服务，所有的请求都会达到存储层，存储层的调用量会暴增，造成存储层挂掉。解决方案: `缓存集群`、`本地缓存`、`限流`、`降级`
+  
    
 - #### 算法和协议
    1.  [Redlock算法: 使用Redis实现分布式锁的算法](https://github.com/redisson/redisson/wiki/8.-Distributed-locks-and-synchronizers)
@@ -184,6 +188,10 @@
     3. [TestNG: 主要功能是覆盖范围更广的测试分类，如单元、功能性、端到端，一体化等](http://testng.org/doc/index.html)
     4. [greys-anatomy: Java问题在线诊断工具](https://github.com/oldmanpushcart/greys-anatomy)
     5. [jmh: 性能微基准测试工具](http://openjdk.java.net/projects/code-tools/jmh/)
+    6. [jmeter：Apache开发的基于Java的压力测试工具](https://jmeter.apache.org)
+    7. [Gatling: scala开发的开源功能强大的负载测试工具](https://github.com/gatling/gatling)
+    8. [ab: apache自带的简单压测工具](https://httpd.apache.org/docs/2.4/programs/ab.html)
+    9. [wrk: 开源HTTP压测工具](https://github.com/wg/wrk)
   
 - #### 序列化
     1. [FlatBuffers: 相较于Protocol Buffers，其更适用于移动设备](https://github.com/google/flatbuffers)
